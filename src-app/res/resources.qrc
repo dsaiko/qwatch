@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/" >
+        <file alias="alarm.png" >images/alarm.png</file>
+        <file alias="exit.png" >images/exit.png</file>
+        <file alias="clock.png" >images/clock.png</file>
+        <file alias="alarm.wav" >sounds/alarm.wav</file>
+        <file alias="stop.png" >images/stop.png</file>
+        <file alias="resize.png" >images/resize.png</file>
+        <file alias="calendar.png" >images/calendar.png</file>
+        <file alias="about.png" >images/about.png</file>
+        <file>translations/qwatch_de.qm</file>
+        <file>translations/qwatch_en.qm</file>
+        <file>translations/qwatch_cs.qm</file>
+        <file alias="flags.png" >images/flags.png</file>
+        <file>images/flags/flag-cs.png</file>
+        <file>images/flags/flag-de.png</file>
+        <file>images/flags/flag-en.png</file>
+        <file alias="about.jpg" >images/about.jpg</file>
+    </qresource>
+</RCC>
