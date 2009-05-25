@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 38 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -29,7 +29,7 @@
 #include <QString>
 
 #define MAJORVERSION    "0.5."
-#define MINORVERSION    "$Rev: 38 $"
+#define MINORVERSION    "$Rev$"
 
 QString getVersion();
 
@@ -64,3 +64,5 @@ QString getVersion();
 // Rev 36,  Sun May 17 23:12:34 EST 2009
 // Rev 37,  Mon May 18 19:05:06 EST 2009
 // Rev 37,  Tue May 19 19:30:54 EST 2009
+// Rev 3,  Mon May 25 19:11:38 EST 2009
+// Rev 3,  Mon May 25 19:11:52 EST 2009

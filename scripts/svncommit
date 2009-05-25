@@ -2,14 +2,12 @@
 
 cd ..
 
-rm -rf build/*
-
 status="$(svn status)"
 
 if [ "$status" != "" ]
 then
-    revision=$(svn info src-app/inc/version.h | grep Revision | awk '{print $2}')
-    echo "// Rev $revision, " $(date) >> src-app/inc/version.h
+    revision=$(svn info src-app/src/version.h | grep Revision | awk '{print $2}')
+    echo "// Rev $revision, " $(date) >> src-app/src/version.h
     for file in $(svn status | grep -v ! | awk '{print $2}')
     do
 	svn add $file
