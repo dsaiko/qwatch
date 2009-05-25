@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cd ..
+
+status="$(svn status)"
+
+if [ "$status" != "" ]
+then
+    revision=$(svn info src-app/inc/version.h | grep Revision | awk '{print $2}')
+    echo "// Rev $revision, " $(date) >> src-app/inc/version.h
+    for file in $(svn status | grep -v ! | awk '{print $2}')
+    do
+	svn add $file
+	sourcefile=$(echo $file | egrep "\\.(h|cpp|pro|txt)$")
+	if [ "$sourcefile" != "" ]
+	then
+	    svn propset svn:keywords "Id Rev" $file
+	fi
+    done
+    for file in $(svn status | grep ! | awk '{print $2}')
+    do
+	svn delete $file
+    done
+    svn commit
+fi
