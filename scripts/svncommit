@@ -2,6 +2,10 @@
 
 cd ..
 
+rm ../build/*
+rm ../build/app/*
+rm ../build/tests/*
+
 status="$(svn status)"
 
 if [ "$status" != "" ]
