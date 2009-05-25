@@ -2,6 +2,8 @@
 
 cd ..
 
+rm -rf build
+
 status="$(svn status)"
 
 if [ "$status" != "" ]
