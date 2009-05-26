@@ -29,6 +29,16 @@
 #include "graphics/constants-graphics.h"
 
 
+void drawPath(QPainter *painter, QFont font, QRect rect, int y, QString str)
+{
+    QPainterPath path;
+    painter->setFont(font);
+    QFontMetrics fm = painter->fontMetrics();
+    int stringwidth = fm.width(str);
+    path.addText(rect.left()+(rect.width()-stringwidth)/2, y, font, str);
+    painter->drawPath(path);
+}
+
 
 void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int size, int secondtimeoffset, bool trayiconmode) {
 
@@ -80,16 +90,15 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
         QTime t2 = time.addSecs(secondtimeoffset);
         paintSecondClock(painter, t2, 0, -41);
 
-        painter->setFont(font2);
-        static const QRect r1(30, -51, 15, 15);
-        painter->drawText(r1, Qt::AlignLeft, "T2");
+        static const QRect r1(32, -51, 15, 15);
+        drawPath(painter, font2, r1, r1.bottom(), "T2");
         paintLogo(painter);
 
         if(app->enableAlarmClockAction->isChecked()) {
             painter->setPen(alarmRed);
         }
-        static const QRect r3(-69, 25, 50, 15);
-        painter->drawText(r3, Qt::AlignCenter, "ALR");
+        static const QRect r3(-68, 25, 50, 11);
+        drawPath(painter, font2, r3, r3.bottom(), "ALR");
 
         painter->setPen(Qt::NoPen);
 
@@ -149,13 +158,15 @@ void ClockPainter::paintDate(QPainter *painter) {
 
     painter->setPen(borderField);
     painter->setBrush(brushField);
-    QRect rect(-10, 5, 80, 21);
+    QRect rect(-10, 5, 80, 18);
     painter->drawRect(rect);
 
     QString date=QTime::currentTime().toString(Qt::DefaultLocaleLongDate).split(" ").first();
 
-    painter->setPen(penText);
-    painter->drawText(rect, Qt::AlignCenter, date);
+    painter->setPen(Qt::NoPen);
+    painter->setBrush(penText);
+
+    drawPath(painter, font, rect, rect.bottom()-2, date);
 
     painter->setFont(font2);
     QDate currentDate=QDate::currentDate();
@@ -165,8 +176,8 @@ void ClockPainter::paintDate(QPainter *painter) {
     if(date2.contains(fullYear) == false) {
         date2 = date2.replace(shortYear,fullYear);
     }
-    QRect rect2(-10, 25, 80, 15);
-    painter->drawText(rect2, Qt::AlignCenter, date2);
+    QRect rect2(-10, 25, 80, 10);
+    drawPath(painter, font2, rect2, rect2.bottom(), date2);
 
 }
 
@@ -203,8 +214,9 @@ void ClockPainter::paintLogo(QPainter *painter) {
     static const QFont font2("verdana",6,0);
     painter->setFont(font2);
     static const QString  str("Water Resistant");
-    painter->drawText(QRect(-5,-5,70,10),Qt::AlignCenter,str);
 
+    QRect rect(-5,-5,70,10);
+    drawPath(painter,font2,rect,rect.bottom()-2,str);
 
     static const QFont font3("arial black",10,900);
     painter->setFont(font3);
