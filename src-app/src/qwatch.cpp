@@ -67,8 +67,6 @@ QWatch::QWatch(QWidget *parent)
 
     updateSecondClockTimeDifference();
 
-    setWindowOpacity(1.0-configuration->getInt(CONFIG_TRANSPARENCY,10)/100.0);
-
     setAttribute(Qt::WA_TranslucentBackground);
     initPopupMenu();
 
@@ -96,6 +94,9 @@ QWatch::QWatch(QWidget *parent)
     alarmTimeChanged(QTime::currentTime(), true);
     initTray();
     updateTrayIcon();
+
+    double opacity = 1.0-configuration->getInt(CONFIG_TRANSPARENCY,10)/100.0;
+    setWindowOpacity(opacity);
 }
 
 void QWatch::mouseMoveEvent(QMouseEvent *event)

@@ -73,6 +73,7 @@ FORMS +=        ui/second-timezone.ui \
                 ui/about.ui
 
 RESOURCES +=    res/resources.qrc
+RC_FILE =       res/qwatch.rc
 
 TRANSLATIONS =  ../lang/qwatch_cs.ts \
                 ../lang/qwatch_en.ts \
