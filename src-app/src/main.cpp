@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 44 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
 
     QWatch *qwatch = new QWatch();
     qwatch->show();
-    //workaround for qwatch to show up
-    qwatch->move(qwatch->pos()+QPoint(1,1));
 
-    WavSound::playWav(":/alarm.wav");
+    //foce the watch to show up
+    qwatch->move(qwatch->pos()-QPoint(10,10));
+
     return app.exec();
 }

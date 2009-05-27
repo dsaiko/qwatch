@@ -69,6 +69,7 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
    <value key="buildDirectory" type="QString" >/home/dsaiko/qtworkspace/qwatch</value>
   </valuemap>
  </data>
@@ -77,6 +78,7 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
    <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
   </valuemap>
  </data>
  <data>
@@ -84,7 +86,7 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-8SEEgpxYSW,guid=20808b4944237e4809dc218a4a1a3e95</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-8pP2boGUae,guid=e98597dd6467138eec0b20134a1b442b</value>
     <value type="QString" >DEBEMAIL=dusan.saiko@gmail.com</value>
     <value type="QString" >DEBFULLNAME=Dusan Saiko</value>
     <value type="QString" >DESKTOP_SESSION=gnome</value>
@@ -94,30 +96,31 @@
     <value type="QString" >GDM_LANG=en_AU.UTF-8</value>
     <value type="QString" >GDM_XSERVER_LOCATION=local</value>
     <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString" >GNOME_KEYRING_PID=4259</value>
-    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-xFteZU/socket</value>
+    <value type="QString" >GNOME_KEYRING_PID=4145</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-yGTplM/socket</value>
     <value type="QString" >GPGKEY=51A5CBCB</value>
-    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-W50vsj/S.gpg-agent:4410:1</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-NcIYyp/S.gpg-agent:4295:1</value>
     <value type="QString" >GTK_MODULES=canberra-gtk-module</value>
     <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/dsaiko/.gtkrc-1.2-gnome2</value>
     <value type="QString" >HOME=/home/dsaiko</value>
     <value type="QString" >LANG=en_AU.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
     <value type="QString" >LD_LIBRARY_PATH=/opt/qtsdk-2009.02/lib64/qtcreator:</value>
     <value type="QString" >LOGNAME=dsaiko</value>
     <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-dsaiko</value>
     <value type="QString" >PATH=/opt/qtsdk-2009.02/qt/bin:/home/dsaiko/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString" >PWD=/opt/qtsdk-2009.02/bin</value>
     <value type="QString" >QTDIR=/opt/qtsdk-2009.02/qt</value>
-    <value type="QString" >SESSION_MANAGER=local/jdsaiko:/tmp/.ICE-unix/4272</value>
+    <value type="QString" >SESSION_MANAGER=local/jdsaiko:/tmp/.ICE-unix/4158</value>
     <value type="QString" >SHELL=/bin/bash</value>
-    <value type="QString" >SSH_AGENT_PID=4409</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-xFteZU/socket.ssh</value>
+    <value type="QString" >SSH_AGENT_PID=4294</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-yGTplM/socket.ssh</value>
     <value type="QString" >USER=dsaiko</value>
     <value type="QString" >USERNAME=dsaiko</value>
     <value type="QString" >WINDOWPATH=7</value>
     <value type="QString" >XAUTHORITY=/home/dsaiko/.Xauthority</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString" >XDG_SESSION_COOKIE=30ce1328db3afc872f4521e449d28690-1243233940.727625-1178905582</value>
+    <value type="QString" >XDG_SESSION_COOKIE=30ce1328db3afc872f4521e449d28690-1243300907.613528-1792151440</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >/home/dsaiko/qtworkspace/qwatch/qwatch.pro</value>
@@ -137,7 +140,7 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-8SEEgpxYSW,guid=20808b4944237e4809dc218a4a1a3e95</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-8pP2boGUae,guid=e98597dd6467138eec0b20134a1b442b</value>
     <value type="QString" >DEBEMAIL=dusan.saiko@gmail.com</value>
     <value type="QString" >DEBFULLNAME=Dusan Saiko</value>
     <value type="QString" >DESKTOP_SESSION=gnome</value>
@@ -147,30 +150,31 @@
     <value type="QString" >GDM_LANG=en_AU.UTF-8</value>
     <value type="QString" >GDM_XSERVER_LOCATION=local</value>
     <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString" >GNOME_KEYRING_PID=4259</value>
-    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-xFteZU/socket</value>
+    <value type="QString" >GNOME_KEYRING_PID=4145</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-yGTplM/socket</value>
     <value type="QString" >GPGKEY=51A5CBCB</value>
-    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-W50vsj/S.gpg-agent:4410:1</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-NcIYyp/S.gpg-agent:4295:1</value>
     <value type="QString" >GTK_MODULES=canberra-gtk-module</value>
     <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/dsaiko/.gtkrc-1.2-gnome2</value>
     <value type="QString" >HOME=/home/dsaiko</value>
     <value type="QString" >LANG=en_AU.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
     <value type="QString" >LD_LIBRARY_PATH=/opt/qtsdk-2009.02/lib64/qtcreator:</value>
     <value type="QString" >LOGNAME=dsaiko</value>
     <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-dsaiko</value>
     <value type="QString" >PATH=/opt/qtsdk-2009.02/qt/bin:/home/dsaiko/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString" >PWD=/opt/qtsdk-2009.02/bin</value>
     <value type="QString" >QTDIR=/opt/qtsdk-2009.02/qt</value>
-    <value type="QString" >SESSION_MANAGER=local/jdsaiko:/tmp/.ICE-unix/4272</value>
+    <value type="QString" >SESSION_MANAGER=local/jdsaiko:/tmp/.ICE-unix/4158</value>
     <value type="QString" >SHELL=/bin/bash</value>
-    <value type="QString" >SSH_AGENT_PID=4409</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-xFteZU/socket.ssh</value>
+    <value type="QString" >SSH_AGENT_PID=4294</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-yGTplM/socket.ssh</value>
     <value type="QString" >USER=dsaiko</value>
     <value type="QString" >USERNAME=dsaiko</value>
     <value type="QString" >WINDOWPATH=7</value>
     <value type="QString" >XAUTHORITY=/home/dsaiko/.Xauthority</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString" >XDG_SESSION_COOKIE=30ce1328db3afc872f4521e449d28690-1243233940.727625-1178905582</value>
+    <value type="QString" >XDG_SESSION_COOKIE=30ce1328db3afc872f4521e449d28690-1243300907.613528-1792151440</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >-w</value>
@@ -184,12 +188,101 @@
   <variable>buildconfiguration-Debug-cleanstep0</variable>
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-8pP2boGUae,guid=e98597dd6467138eec0b20134a1b442b</value>
+    <value type="QString" >DEBEMAIL=dusan.saiko@gmail.com</value>
+    <value type="QString" >DEBFULLNAME=Dusan Saiko</value>
+    <value type="QString" >DESKTOP_SESSION=gnome</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >GDMSESSION=gnome</value>
+    <value type="QString" >GDM_LANG=en_AU.UTF-8</value>
+    <value type="QString" >GDM_XSERVER_LOCATION=local</value>
+    <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString" >GNOME_KEYRING_PID=4145</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-yGTplM/socket</value>
+    <value type="QString" >GPGKEY=51A5CBCB</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-NcIYyp/S.gpg-agent:4295:1</value>
+    <value type="QString" >GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/dsaiko/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >HOME=/home/dsaiko</value>
+    <value type="QString" >LANG=en_AU.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
+    <value type="QString" >LD_LIBRARY_PATH=/opt/qtsdk-2009.02/lib64/qtcreator:</value>
+    <value type="QString" >LOGNAME=dsaiko</value>
+    <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-dsaiko</value>
+    <value type="QString" >PATH=/opt/qtsdk-2009.02/qt/bin:/home/dsaiko/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString" >PWD=/opt/qtsdk-2009.02/bin</value>
+    <value type="QString" >QTDIR=/opt/qtsdk-2009.02/qt</value>
+    <value type="QString" >SESSION_MANAGER=local/jdsaiko:/tmp/.ICE-unix/4158</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SSH_AGENT_PID=4294</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-yGTplM/socket.ssh</value>
+    <value type="QString" >USER=dsaiko</value>
+    <value type="QString" >USERNAME=dsaiko</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XAUTHORITY=/home/dsaiko/.Xauthority</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
+    <value type="QString" >XDG_SESSION_COOKIE=30ce1328db3afc872f4521e449d28690-1243300907.613528-1792151440</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >clean</value>
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/dsaiko/qtworkspace/qwatch</value>
   </valuemap>
  </data>
  <data>
   <variable>buildconfiguration-Release-buildstep0</variable>
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-tP7AGt7vl2,guid=970b5c691719557368d5f6584a1a6f3b</value>
+    <value type="QString" >DEBEMAIL=dusan.saiko@gmail.com</value>
+    <value type="QString" >DEBFULLNAME=Dusan Saiko</value>
+    <value type="QString" >DESKTOP_SESSION=gnome</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >GDMSESSION=gnome</value>
+    <value type="QString" >GDM_LANG=en_AU.UTF-8</value>
+    <value type="QString" >GDM_XSERVER_LOCATION=local</value>
+    <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString" >GNOME_KEYRING_PID=4104</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-DYh3ww/socket</value>
+    <value type="QString" >GPGKEY=51A5CBCB</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-ITtOvd/S.gpg-agent:4254:1</value>
+    <value type="QString" >GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/dsaiko/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >HOME=/home/dsaiko</value>
+    <value type="QString" >LANG=en_AU.UTF-8</value>
+    <value type="QString" >LD_LIBRARY_PATH=/opt/qtsdk-2009.02/lib64/qtcreator:</value>
+    <value type="QString" >LOGNAME=dsaiko</value>
+    <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-dsaiko</value>
+    <value type="QString" >PATH=/opt/qtsdk-2009.02/qt/bin:/home/dsaiko/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString" >PWD=/opt/qtsdk-2009.02/bin</value>
+    <value type="QString" >QTDIR=/opt/qtsdk-2009.02/qt</value>
+    <value type="QString" >SESSION_MANAGER=local/jdsaiko:/tmp/.ICE-unix/4117</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SSH_AGENT_PID=4253</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-DYh3ww/socket.ssh</value>
+    <value type="QString" >USER=dsaiko</value>
+    <value type="QString" >USERNAME=dsaiko</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XAUTHORITY=/home/dsaiko/.Xauthority</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
+    <value type="QString" >XDG_SESSION_COOKIE=30ce1328db3afc872f4521e449d28690-1243246395.383365-1510869704</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >/home/dsaiko/qtworkspace/qwatch/qwatch.pro</value>
+    <value type="QString" >-spec</value>
+    <value type="QString" >linux-g++-64</value>
+    <value type="QString" >-r</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/opt/qtsdk-2009.02/qt/bin/qmake</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/dsaiko/qtworkspace/qwatch</value>
    <value key="buildConfiguration" type="int" >0</value>
   </valuemap>
  </data>
@@ -197,6 +290,48 @@
   <variable>buildconfiguration-Release-buildstep1</variable>
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-tP7AGt7vl2,guid=970b5c691719557368d5f6584a1a6f3b</value>
+    <value type="QString" >DEBEMAIL=dusan.saiko@gmail.com</value>
+    <value type="QString" >DEBFULLNAME=Dusan Saiko</value>
+    <value type="QString" >DESKTOP_SESSION=gnome</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >GDMSESSION=gnome</value>
+    <value type="QString" >GDM_LANG=en_AU.UTF-8</value>
+    <value type="QString" >GDM_XSERVER_LOCATION=local</value>
+    <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString" >GNOME_KEYRING_PID=4104</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-DYh3ww/socket</value>
+    <value type="QString" >GPGKEY=51A5CBCB</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-ITtOvd/S.gpg-agent:4254:1</value>
+    <value type="QString" >GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/dsaiko/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >HOME=/home/dsaiko</value>
+    <value type="QString" >LANG=en_AU.UTF-8</value>
+    <value type="QString" >LD_LIBRARY_PATH=/opt/qtsdk-2009.02/lib64/qtcreator:</value>
+    <value type="QString" >LOGNAME=dsaiko</value>
+    <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-dsaiko</value>
+    <value type="QString" >PATH=/opt/qtsdk-2009.02/qt/bin:/home/dsaiko/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString" >PWD=/opt/qtsdk-2009.02/bin</value>
+    <value type="QString" >QTDIR=/opt/qtsdk-2009.02/qt</value>
+    <value type="QString" >SESSION_MANAGER=local/jdsaiko:/tmp/.ICE-unix/4117</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SSH_AGENT_PID=4253</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-DYh3ww/socket.ssh</value>
+    <value type="QString" >USER=dsaiko</value>
+    <value type="QString" >USERNAME=dsaiko</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XAUTHORITY=/home/dsaiko/.Xauthority</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
+    <value type="QString" >XDG_SESSION_COOKIE=30ce1328db3afc872f4521e449d28690-1243246395.383365-1510869704</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/dsaiko/qtworkspace/qwatch</value>
   </valuemap>
  </data>
  <data>

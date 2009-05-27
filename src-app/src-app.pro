@@ -1,6 +1,6 @@
 # QWatch project file - application
 # (c) Dusan Saiko dusan.saiko@gmail.com
-# $Rev: 46 $
+# $Rev$
 
 
 TEMPLATE =      app
@@ -8,11 +8,8 @@ QT +=           xml
 TARGET =        qwatch
 INCLUDEPATH +=  . src/
 
-# ISBUILD DEFINES += INTERSHOP
-# ISBUILD TARGET = iswatch
-
-DEFINES += INTERSHOP
-TARGET = iswatch
+#ISBUILD DEFINES += INTERSHOP
+#ISBUILD TARGET = iswatch
 
 OBJECTS_DIR = ../build/app
 MOC_DIR = ../build/app

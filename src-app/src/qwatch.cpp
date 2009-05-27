@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 44 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -29,7 +29,7 @@
 #include "systeminfo.h"
 
 QWatch::QWatch(QWidget *parent)
-    : QWidget(parent, WINDOWS_FLAGS_FRAMELESS)
+    : QWidget(parent,WINDOWS_FLAGS_FRAMELESS)
 {
     timeZoneDialog = NULL;
     calendarDialog = NULL;
