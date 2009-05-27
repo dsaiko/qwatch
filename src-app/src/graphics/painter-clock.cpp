@@ -95,13 +95,10 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
         paintLogo(painter);
 
         if(app->enableAlarmClockAction->isChecked()) {
-            painter->setPen(alarmRed);
+            painter->setBrush(alarmRed);
         }
         static const QRect r3(-68, 25, 50, 11);
         drawPath(painter, font2, r3, r3.bottom(), "ALR");
-
-        painter->setPen(Qt::NoPen);
-
 
         paintDigits(painter,trayiconmode);
     }
