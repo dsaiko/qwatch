@@ -1,8 +1,8 @@
 # QWatch project file
 # (c) Dusan Saiko dusan.saiko@gmail.com
-# $Rev: 21 $
+# $Rev$
 
 TEMPLATE = subdirs
 CONFIG += ordered
-SUBDIRS = src-app
+SUBDIRS = src-app src-tests
 
