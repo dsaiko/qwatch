@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 44 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -32,7 +32,6 @@ AboutDialog::AboutDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->textBrowser->viewport()->setAutoFillBackground(false);
     ui->textBrowser_2->viewport()->setAutoFillBackground(false);
 
     QString html = ui->textBrowser_2->toHtml().replace("VERSIONINFO",getVersion());    

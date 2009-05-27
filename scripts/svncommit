@@ -2,9 +2,9 @@
 
 cd ..
 
-rm ../build/*
-rm ../build/app/*
-rm ../build/tests/*
+rm build/*
+rm build/app/*
+rm build/tests/*
 
 status="$(svn status)"
 
