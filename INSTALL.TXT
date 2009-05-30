@@ -1,0 +1,21 @@
+This is a short HOWTO for compiling the application from source code.
+
+QWatch is standard QT application, compilation can be generally achieved by invoking commands
+
+qmake
+make
+
+in the source folder directory.
+It should create binary executable files under ./build directory.
+
+LINUX:
+- following packages have to be installed to compile QT application: libqt4-dev (version 4.5+), build-essential
+- in adition, libraries for Alsa development are required to compile qwatch: libasound2-dev
+- aplication uses "verdana" and "arial black" fonts to display strings, for these fonts install: msttcorefonts
+
+Windows:
+- install QT development SDK from www.qtsoftware.com (OpenSource)
+- build using QTCreator or command line
+- default build builds application dynamically - it will depend on QT .dll(s) and mingwm10.dll, but you can avoid
+  this by reconfiguring Qt to build in statically. See Qt documentation for this.
+
