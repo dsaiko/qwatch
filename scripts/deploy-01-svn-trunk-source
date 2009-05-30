@@ -3,36 +3,39 @@
 SCRIPTFOLDER=$(pwd)
 
 TMPFILE=/tmp/qwatch-$RANDOM-$RANDOM
-
 svn export http://qwatch.googlecode.com/svn/trunk/ $TMPFILE
-
 cd $TMPFILE
-
-find . | grep Makefile | xargs -l rm		
+find . | grep Makefile | xargs -l rm
 find . | grep \\.user | xargs -l rm
 
 
 cd scripts
-
 VERSION=$(./get-version)
 
 cd ..
-
 mkdir qwatch-$VERSION
-
 mv * qwatch-$VERSION/
 
 tar czf qwatch-$VERSION.tar.gz qwatch-$VERSION
 
-cd $SCRIPTFOLDER
-
+mv qwatch-$VERSION iswatch-$VERSION
+cd iswatch-$VERSION
+cd src-app
+mv src-app.pro src-app.pro.org
+cat src-app.pro.org | awk '{gsub("#ISBUILD","");print}' > src-app.pro
+rm src-app.pro.org
 cd ..
+cd ..
+tar czf iswatch-$VERSION.tar.gz iswatch-$VERSION
 
+
+cd $SCRIPTFOLDER
+cd ..
 rm -rf dist
-
 mkdir dist
 cd dist
 
 cp $TMPFILE/qwatch-$VERSION.tar.gz .
+cp $TMPFILE/iswatch-$VERSION.tar.gz .
 
 rm -rf $TMPFILE
