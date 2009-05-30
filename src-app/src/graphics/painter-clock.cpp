@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 44 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -64,11 +64,40 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
     painter->setBrush(*gradient);
     painter->drawEllipse(-size/2 + 1, -size/2 +1, size-2, size-2);
 
+
     painter->setPen(Qt::NoPen);
 
     painter->scale(size / 200.0, size / 200.0);
 
+      if(trayiconmode) {
+        static QColor back1(224,243,255,190);
+        painter->setBrush(back1);
+        painter->setPen(Qt::NoPen);
+        painter->drawEllipse(-100, -100, 200, 200);
+
+        static QColor back2(224*4/5,243*4/5,255*4/5,150);
+        painter->setBrush(back2);
+        painter->drawEllipse(-10, -10, 80, 80);
+
+    }
+
     paintStripes(painter);
+
+
+  if(trayiconmode) {
+#define delta 20
+#define delta2 10
+        static QPen pen44(QColor(192,192,120,255),delta);
+        painter->setPen(pen44);
+        painter->setBrush(Qt::NoBrush);
+        painter->drawEllipse(-100+delta, -100+delta, 200-delta*2, 200-delta*2);
+        static QPen pen44b(QColor(0,0,0,192),delta2);
+        painter->setPen(pen44b);
+        painter->drawEllipse(-100+delta2, -100+delta2, 200-delta2*2, 200-delta2*2);
+        static QPen pen44c(QColor(255,255,255,255),delta2);
+        painter->setPen(pen44c);
+        painter->drawArc(-100+delta2, -100+delta2, 200-delta2*2, 200-delta2*2, 5760/8, 5760/2);
+    }
 
 
     if(trayiconmode == false)  {
@@ -125,16 +154,18 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
 
     static const QPen timeMarkColor1(QColor(0,0,0, 224),1);
     static const QPen timeMarkColor2(QColor(0,0,0, 224),3);
+    static const QPen timeMarkColor1b(QColor(255,255,255, 255),5);
+    static const QPen timeMarkColor2b(QColor(255,255,255, 255),5);
 
-    for (int j = 0; j < 60; ++j) {
-        if(j % 5 == 0) {
-           painter->setPen(timeMarkColor2);
-        } else {
-           painter->setPen(timeMarkColor1);
-        }
-        painter->drawLine(95, 0, 97, 0);
-        painter->rotate(6.0);
-    }
+//    for (int j = 0; j < 60; ++j) {
+//        if(j % 5 == 0) {
+//           painter->setPen(trayiconmode ? timeMarkColor2b : timeMarkColor2);
+//        } else {
+//           painter->setPen(trayiconmode ? timeMarkColor1b : timeMarkColor1);
+//        }
+//        painter->drawLine(95, 0, 97, 0);
+//        painter->rotate(6.0);
+//    }
 
 
 }
@@ -146,9 +177,6 @@ void ClockPainter::paintDate(QPainter *painter) {
 
     painter->setFont(font);
 
-//    static const QColor brushField(255,255,255,164);
-//   static const QPen borderField(QColor(100,100,100,60),1);
-//    static const QColor penText(0,0,0,216);
     static const QColor brushField(255,255,255,164);
     static const QPen borderField(QColor(100,100,100,100),1);
     static const QColor penText(0,0,0,220);

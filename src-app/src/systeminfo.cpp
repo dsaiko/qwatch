@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 35 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -22,22 +22,26 @@
  * System information
  */
 
+#include "systeminfo.h"
+
 #ifdef Q_OS_LINUX
+
 #include <QX11Info>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
+
 #endif
 
-#include "systeminfo.h"
 
 bool SystemInfo::canDrawTransparentWidgets() {
+#ifdef Q_OS_WIN
+    return true;
+#endif
+
 #ifdef Q_OS_LINUX
     static Display *display = QX11Info::display();
     static Atom compositeManagerAtom = XInternAtom(display, "_NET_WM_CM_S0",False);
 
     return XGetSelectionOwner(display,compositeManagerAtom);
-#endif
-#ifdef Q_OS_WIN
-    return true;
 #endif
 }

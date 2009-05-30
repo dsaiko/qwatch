@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 35 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -24,6 +24,8 @@
 
 #ifndef SYSTEMINFO_H
 #define SYSTEMINFO_H
+
+#include <QtGui>
 
 class SystemInfo {
     public:

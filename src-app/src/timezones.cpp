@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 35 $
+ * $Rev$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -24,8 +24,16 @@
 
 #include "timezones.h"
 #include <QDebug>
+#include <QDir>
 
 #ifdef Q_OS_LINUX
+
+TimeZones::TimeZones() {
+}
+
+TimeZones::~TimeZones() {
+}
+
 QList<QString> * TimeZones::listTimeZones()
 {
     QList<QString> *zones = new QList<QString>();

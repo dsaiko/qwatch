@@ -28,7 +28,7 @@
 
 #include <QString>
 
-#define MAJORVERSION    "0.5."
+#define MAJORVERSION    "1.0."
 #define MINORVERSION    "$Rev$"
 
 QString getVersion();
@@ -73,3 +73,4 @@ QString getVersion();
 // Rev 18,  Wed May 27 16:54:26 EST 2009
 // Rev 22,  Wed May 27 23:41:32 EST 2009
 // Rev 23,  Wed May 27 23:42:25 EST 2009
+// Rev 25,  Sat May 30 23:35:48 EST 2009
