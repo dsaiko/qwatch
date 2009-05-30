@@ -40,6 +40,8 @@ SOURCES +=      src/main.cpp \
                 src/graphics/painter-alarmclock.cpp \
                 src/graphics/painter-trayicon.cpp \
                 src/qwatch.cpp \
+                src/timezones.cpp \
+                src/systeminfo.cpp \
                 src/config/configuration.cpp \
                 src/menu/menu.cpp \
                 src/menu/menu-actions.cpp \
@@ -52,9 +54,6 @@ SOURCES +=      src/main.cpp \
                 src/menu/second-timezone.cpp
 
 win32 {
-    SOURCES +=  src/timezones-win.cpp \
-                src/systeminfo-win.cpp
-
     LIBS    +=  -lwinmm
     RC_FILE =   res/qwatch.rc
 }
@@ -62,10 +61,7 @@ win32 {
 
 unix { 
 
-SOURCES +=      src/timezones-linux.cpp \
-                src/systeminfo-linux.cpp \
-
-QMAKE_LIBS +=   -lasound
+    QMAKE_LIBS +=   -lasound
 }
 
 FORMS +=        ui/second-timezone.ui \

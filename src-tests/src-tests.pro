@@ -48,21 +48,17 @@ SOURCES += \
     ../src-app/src/menu/set-alarmclock.cpp \
     ../src-app/src/menu/calendar.cpp \
     ../src-app/src/menu/about.cpp \
+    ../src-app/src/timezones.cpp \
+    ../src-app/src/systeminfo.cpp \
     ../src-app/src/graphics/alarmanimation.cpp \
     ../src-app/src/sound/sound.cpp \
     ../src-app/src/menu/second-timezone.cpp
 
 win32 {
-    SOURCES +=  ../src-app/src/timezones-win.cpp \
-                ../src-app/src/systeminfo-win.cpp
-
     LIBS    +=  -lwinmm
 }
 
 unix {
-    SOURCES +=  ../src-app/src/timezones-linux.cpp \
-                ../src-app/src/systeminfo-linux.cpp
-
     QMAKE_LIBS += -lasound
 }
 

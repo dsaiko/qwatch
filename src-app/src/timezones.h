@@ -25,18 +25,44 @@
 #ifndef TIMEZONES_H
 #define TIMEZONES_H
 
-#include <QtGui>
 #include <QString>
-#include <QtXml>
-#include <QMap>
-#include <stdio.h>
-#include <time.h>
+#include <QList>
+#include <QDateTime>
+#ifdef Q_OS_WIN
+#include <qt_windows.h>
 
+#endif
+
+#ifdef Q_OS_WIN
+
+typedef struct tagTZREG {
+    LONG bias;
+    LONG standardBias;
+    LONG daylightBias;
+    SYSTEMTIME standardDate;
+    SYSTEMTIME daylightDate;
+} TZIREG;
+
+typedef struct _TimeZone {
+    QString displayName;
+    TIME_ZONE_INFORMATION *timeZoneInformation;
+
+} TimeZone;
+
+
+#endif
 
 class TimeZones {
     public:
+        TimeZones();
+        ~TimeZones();
         QList<QString> * listTimeZones();
         QDateTime getLocalTime(QString timezone);
+
+#ifdef Q_OS_WIN
+        QList<TimeZone*> *timeZoneList;
+#endif
+
 };
 
 #endif //TIMEZONES_H
