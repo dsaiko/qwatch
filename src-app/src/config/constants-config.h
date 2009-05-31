@@ -24,7 +24,11 @@
 #ifndef CONSTANTS_CONFIG_H
 #define CONSTANTS_CONFIG_H
 
+#ifdef INTERSHOP
+#define CONFIG_FOLDER           ".iswatch"
+#else
 #define CONFIG_FOLDER           ".qwatch"
+#endif
 
 #define CONFIG_SECONDTIMEZONE   "SecondTimeZone"
 #define CONFIG_TRANSPARENCY     "Transparency"

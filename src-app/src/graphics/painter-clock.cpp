@@ -154,16 +154,19 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
 
     static const QPen timeMarkColor1(QColor(0,0,0, 224),1);
     static const QPen timeMarkColor2(QColor(0,0,0, 224),3);
-    static const QPen timeMarkColor1b(QColor(0,0,0, 180),0);
     static const QPen timeMarkColor2b(QColor(0,0,0, 180),10);
 
     for (int j = 0; j < 60; ++j) {
         if(j % 5 == 0) {
-           painter->setPen(trayiconmode ? timeMarkColor2b : timeMarkColor2);
+            painter->setPen(trayiconmode ? timeMarkColor2b : timeMarkColor2);
         } else {
-           painter->setPen(trayiconmode ? timeMarkColor1b : timeMarkColor1);
+            if(trayiconmode) {
+                painter->setPen(Qt::NoPen);
+            } else {
+               painter->setPen(timeMarkColor1);
+            }
         }
-        painter->drawLine(trayiconmode ? 90 : 95, 0, 97, 0);
+        painter->drawLine(trayiconmode ? 90 : 95, 0, trayiconmode ? 95 : 97, 0);
         painter->rotate(6.0);
     }
 

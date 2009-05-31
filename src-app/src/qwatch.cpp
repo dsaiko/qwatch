@@ -184,8 +184,8 @@ void QWatch::checkFramelessMode() {
 
 void QWatch::updateTrayIcon()
 {
-    static QPixmap tryIconPixmap(TRAYICON_PIXMAP_SIZE,TRAYICON_PIXMAP_SIZE);
     static QColor transparent(0,0,0,0);
+    QPixmap tryIconPixmap(TRAYICON_PIXMAP_SIZE,TRAYICON_PIXMAP_SIZE);
 
     QTime time = QTime::currentTime();
 
