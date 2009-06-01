@@ -166,8 +166,8 @@ QList<TimeZone*> * enumerateTimeZones()
 
     QList<TimeZone*> *result = new QList<TimeZone*>();
 
-    //1.Open the registry key "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones"
-    QString rootKeyName("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones");
+    //1.Open the registry key "Software\Microsoft\Windows NT\CurrentVersion\Time Zones"
+    QString rootKeyName("Software\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones");
     DWORD retCode = RegOpenKeyEx(HKEY_LOCAL_MACHINE, (const WCHAR*)rootKeyName.utf16(), 0, KEY_READ, &hKey);
     if(retCode != ERROR_SUCCESS) return false;
 
