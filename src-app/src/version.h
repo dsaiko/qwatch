@@ -30,6 +30,7 @@
 
 #define MAJORVERSION    "1.0."
 #define MINORVERSION    "$Rev$"
+#define VERSIONDATE     "$Date$"
 
 QString getVersion();
 
