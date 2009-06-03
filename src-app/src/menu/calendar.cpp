@@ -38,3 +38,8 @@ CalendarDialog::~CalendarDialog()
 {
     delete ui;
 }
+
+void CalendarDialog::on_pushButton_clicked()
+{
+    hide();
+}

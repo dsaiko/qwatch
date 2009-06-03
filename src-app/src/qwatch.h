@@ -35,6 +35,7 @@
 #include <QPalette>
 #include <QSettings>
 #include <QRadialGradient>
+#include <QPointer>
 
 #include "graphics/painter.h"
 #include "config/configuration.h"
@@ -42,6 +43,9 @@
 #include "menu/set-alarmclock.h"
 #include "menu/calendar.h"
 #include "menu/about.h"
+#ifdef Q_OS_WIN
+#include "menu/update.h"
+#endif
 #include "timezones.h"
 #include "graphics/alarmanimation.h"
 
@@ -74,6 +78,11 @@ public slots:
 
     //display simple calendar
     void displayCalendar();
+
+#ifdef Q_OS_WIN
+    void updateApplication();
+    void autoUpdateApplication();
+#endif
 
     //display about dialog
     void displayAbout();
@@ -125,6 +134,9 @@ protected:
     QAction *enableAlarmClockAction;
     QAction *stopAlarmClockAction;
     QAction *aboutAction;
+    #ifdef Q_OS_WIN
+    QAction *autoUpdateAction;
+    #endif
 
     QTimer *timerSecondClockSynchronisation;
     QTime  alarmTime;
@@ -138,6 +150,9 @@ protected:
     SetAlarmClockDialog     *alarmClockDialog;
     AboutDialog             *aboutDialog;
     CalendarDialog          *calendarDialog;
+    #ifdef Q_OS_WIN
+    UpdateDialog            *updateDialog;
+    #endif
 
     TimeZones               *timeZones;
     int secondClockTimeDifferenceInSeconds;

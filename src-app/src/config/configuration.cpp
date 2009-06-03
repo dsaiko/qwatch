@@ -24,8 +24,14 @@
 
 #include "config/configuration.h"
 
+#ifdef Q_OS_WIN
+#include <qt_windows.h>
+#include "shlobj.h"
+#endif
+
 Configuration::Configuration(QString folder) {
     this->configFolderName = folder;
+    settingsFolder = getSettingsFolder();
     load();
 }
 
@@ -62,8 +68,37 @@ void Configuration::setString(QString key, QString value) {
     save();
 }
 
+
+QString Configuration::getSettingsFolder() {
+#ifdef Q_OS_LINUX
+    QString settingsFolder;
+    settingsFolder = QDir::homePath();
+    return settingsFolder;
+#endif
+
+#ifdef Q_OS_WIN
+     QString settingsFolder;
+     TCHAR szPath[MAX_PATH];
+     LPITEMIDLIST pidlRoot = NULL;
+     HRESULT hResult=SHGetFolderLocation(NULL, CSIDL_LOCAL_APPDATA, NULL, 0, &pidlRoot);
+     if(hResult == S_OK && pidlRoot)
+     {
+        SHGetPathFromIDList(pidlRoot, szPath);
+        settingsFolder = QString::fromStdWString(szPath);
+     } else {
+        settingsFolder = QDir::homePath();
+     }
+     if(pidlRoot) {
+         ILFree(pidlRoot);
+     }
+     return settingsFolder;
+#endif
+}
+
 bool Configuration::load() {
-    QDir configFolder(QDir::homePath() + QDir::separator() + configFolderName);
+
+
+    QDir configFolder(settingsFolder + QDir::separator() + configFolderName);
     QFile configFile(configFolder.absolutePath() + QDir::separator() + configFileName);
     if(!configFile.exists()) return true;
 
@@ -96,7 +131,7 @@ bool Configuration::load() {
 
 bool Configuration::save() {
     QList<QString> keys = map.keys();
-    QDir configFolder(QDir::homePath() + QDir::separator() + configFolderName);
+    QDir configFolder(settingsFolder + QDir::separator() + configFolderName);
     configFolder.mkdir(configFolder.absolutePath());
     QFile configFile(configFolder.absolutePath() + QDir::separator() + configFileName);
 

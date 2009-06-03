@@ -130,3 +130,8 @@ void SetAlarmClockDialog::on_comboBoxHours_highlighted(int) {
 void SetAlarmClockDialog::on_comboBoxMinutes_highlighted(int) {
      ui->radioButtonAbsoluteTime->setChecked(true);
 }
+
+void SetAlarmClockDialog::on_pushButton_2_clicked()
+{
+    hide();
+}

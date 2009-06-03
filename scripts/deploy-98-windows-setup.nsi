@@ -182,6 +182,7 @@ Section "Uninstall"
   RMDir /r "$INSTDIR"
   RMDir /r "$PROFILE\.${APPFILE}"
   RMDir /r "$SMPROGRAMS\${APPNAME}"
+  RMDir /r "$LOCALAPPDATA\.${APPNAME}"
 
   DeleteRegKey HKCU "${REGISTRYKEY}"
   DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}"

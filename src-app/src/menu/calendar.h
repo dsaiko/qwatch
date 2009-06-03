@@ -45,6 +45,9 @@ public:
     CalendarDialog(QWidget *parent);
     ~CalendarDialog();
     Ui::CalendarDialogClass *ui;
+
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // CALENDAR_H

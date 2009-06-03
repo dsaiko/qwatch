@@ -36,6 +36,9 @@ QWatch::QWatch(QWidget *parent)
     alarmClockDialog = NULL;
     alarmTimer = NULL;
     aboutDialog = NULL;
+#ifdef Q_OS_WIN
+    updateDialog = NULL;
+#endif
 
     configuration = new Configuration(CONFIG_FOLDER);
     clockPainter = new ClockPainter(this);

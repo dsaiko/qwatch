@@ -27,15 +27,20 @@
 #include "qwatch.h"
 #include "graphics/painter.h"
 #include "graphics/constants-graphics.h"
+#include "config/constants-config.h"
 
 
-void drawPath(QPainter *painter, QFont font, QRect rect, int y, QString str)
+void drawPath(QPainter *painter, QFont font, QRect rect, int y, QString str, bool center=true)
 {
     QPainterPath path;
     painter->setFont(font);
     QFontMetrics fm = painter->fontMetrics();
     int stringwidth = fm.width(str);
-    path.addText(rect.left()+(rect.width()-stringwidth)/2, y, font, str);
+    if(center) {
+        path.addText(rect.left()+(rect.width()-stringwidth)/2, y, font, str);
+    } else {
+        path.addText(rect.left(), y, font, str);
+    }
     painter->drawPath(path);
 }
 
@@ -119,8 +124,13 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
         QTime t2 = time.addSecs(secondtimeoffset);
         paintSecondClock(painter, t2, 0, -41);
 
-        static const QRect r1(32, -51, 15, 15);
-        drawPath(painter, font2, r1, r1.bottom(), "T2");
+        static const QRect r1(32, -52, 15, 15);
+        drawPath(painter, font2, r1, r1.bottom(), "T2", false);
+        QString t2label=app->configuration->getString(CONFIG_SECONDTIMEZONE_LABEL,"");
+        if(t2label.trimmed().length()>0) {
+            static const QRect rlabel(32, -41, 15, 15);
+            drawPath(painter, font2, rlabel, rlabel.bottom(), t2label, false);
+        }
         paintLogo(painter);
 
         if(app->enableAlarmClockAction->isChecked()) {

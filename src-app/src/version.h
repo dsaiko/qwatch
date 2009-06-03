@@ -27,12 +27,14 @@
 #define VERSION_H
 
 #include <QString>
+#include <QDate>
 
 #define MAJORVERSION    "1.0."
 #define MINORVERSION    "$Rev$"
 #define VERSIONDATE     "$Date$"
 
 QString getVersion();
+QDate getVersionDate();
 
 #endif
 // Rev 17,  Sun Apr 19 00:01:02 EST 2009

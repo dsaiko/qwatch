@@ -31,8 +31,7 @@ SecontTimeZoneDialog::SecontTimeZoneDialog(QWidget *parent, TimeZones *timeZones
     ui->setupUi(this);
 
     config = c;
-
-    QString currentTZ = config->getString(CONFIG_SECONDTIMEZONE,"");
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(setSecondTimeZone()));
 
     ui->comboBox->addItem("","");
     QList<QString> *zones=timeZones->listTimeZones();
@@ -45,6 +44,12 @@ SecontTimeZoneDialog::SecontTimeZoneDialog(QWidget *parent, TimeZones *timeZones
             ui->comboBox->addItem(zoneText, zone);
         }
     }
+}
+
+
+void SecontTimeZoneDialog::setDefaults() {
+    QString currentTZ = config->getString(CONFIG_SECONDTIMEZONE,"");
+    QString label = config->getString(CONFIG_SECONDTIMEZONE_LABEL,"");
 
     if(currentTZ.length()>0) {
         int dataIndex = ui->comboBox->findData(currentTZ);
@@ -53,18 +58,21 @@ SecontTimeZoneDialog::SecontTimeZoneDialog(QWidget *parent, TimeZones *timeZones
         } else {
             config->setString(CONFIG_SECONDTIMEZONE,"");
         }
+    } else {
+        ui->comboBox->setCurrentIndex(0);
     }
 
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(setSecondTimeZone()));
-
+    ui->editLabel->setText(label);
 }
-
 
 void SecontTimeZoneDialog::setSecondTimeZone()
 {
     QString data = ui->comboBox->itemData(ui->comboBox->currentIndex()).toString();
     data.replace(" ","");
     config->setString(CONFIG_SECONDTIMEZONE,data);
+
+    config->setString(CONFIG_SECONDTIMEZONE_LABEL,ui->editLabel->text());
+
     hide();
     emit timeZoneChanged();
 }
@@ -72,4 +80,9 @@ void SecontTimeZoneDialog::setSecondTimeZone()
 SecontTimeZoneDialog::~SecontTimeZoneDialog()
 {
     delete ui;
+}
+
+void SecontTimeZoneDialog::on_pushButton_2_clicked()
+{
+    hide();
 }

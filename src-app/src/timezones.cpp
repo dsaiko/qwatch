@@ -93,7 +93,7 @@ QString getStringRegistryKeyValue(HKEY hKey, QString valueName) {
 
     retCode = RegQueryValueEx(hKey, (const WCHAR*) valueName.utf16(), NULL, &valueType, value, &dataSize);
     if(retCode == ERROR_SUCCESS && valueType == REG_SZ) {
-       QString s = QString::fromUtf16((const ushort*)value,dataSize/sizeof(WCHAR)-1);
+       QString s = QString::fromStdWString((TCHAR *)value);
        return s;
     }
 
@@ -182,7 +182,7 @@ QList<TimeZone*> * enumerateTimeZones()
         retCode = RegEnumKeyEx(hKey, i, keyName, &keyNameSize, NULL, NULL, NULL, NULL);
         if (retCode == ERROR_SUCCESS)
         {
-            TimeZone *t=processTimeZone(rootKeyName+"\\"+QString::fromUtf16((const ushort*)keyName,keyNameSize));
+            TimeZone *t=processTimeZone(rootKeyName+"\\"+QString::fromStdWString((TCHAR *)keyName));
             if(t!=NULL) {
                 result->append(t);
             }

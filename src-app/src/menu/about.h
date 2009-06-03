@@ -47,7 +47,7 @@ public:
     Ui::AboutDialogClass *ui;
 
 private slots:
-    void on_textBrowser_2_anchorClicked(QUrl url);
+    void on_pushButton_3_clicked();
 };
 
 #endif // ABOUTDLG_H

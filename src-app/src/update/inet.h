@@ -14,37 +14,44 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 44 $
+ * $Rev: 23 $
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
  *
- * Version file
+ * Auto updating functionality
  */
 
-#include "version.h"
-#include <QRegExp>
-#include <QDate>
-#include <QDebug>
-#include <QString>
-#include <QStringList>
+#ifndef INET_H
+#define INET_H
 
-QString getVersion()
+#include "qt_windows.h"
+#include "wininet.h"
+#include <QList>
+#include <QBuffer>
+
+class Inet : public QObject
 {
-    static QString major = MAJORVERSION;
-    static QString minor = MINORVERSION;
+    Q_OBJECT
 
-    return major + minor.replace(QRegExp("[^\\d]"),"");
-}
+signals:
+    void downloading(long size);
+    void downloadFinished(bool ok);
 
-QDate getVersionDate()
-{
-    //Date: 2009-06-03 18:41:15 +1000 (st, 03 VI 2009)
-    static QString date = VERSIONDATE;
+public:
+    Inet();
+    ~Inet();
 
-    QString d = date.replace(QRegExp("[^\\d- ]"),"").trimmed();
-    d=d.split(" ").first();
+    bool isInternetAvailable();
+    HINTERNET openUrl(QString URL);
+    long getFileSize(HINTERNET hSession);
+    bool downloadFile(HINTERNET hSession, QIODevice *data, bool emitSignals=true);
+    void closeUrl(HINTERNET hSession);
 
-    QDate versionDate = QDate::fromString(d,"yyyy-MM-dd");
-    return versionDate;
-}
+protected:
+    HINTERNET hInternet;
+    bool internetAvailable;
+
+};
+
+#endif // INET_H

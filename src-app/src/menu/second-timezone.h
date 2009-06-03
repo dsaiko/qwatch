@@ -44,6 +44,7 @@ class SecontTimeZoneDialog : public QDialog
 public:
     SecontTimeZoneDialog(QWidget *parent, TimeZones *timeZones, Configuration *c);
     ~SecontTimeZoneDialog();
+    void setDefaults();
 
 private:
     Ui::SecondTimeDialogClass *ui;
@@ -53,9 +54,12 @@ protected slots:
     void setSecondTimeZone();
 
 signals:
-    void timeZoneChanged();
+    void timeZoneChanged();    
 
     friend class QWatch;
+
+private slots:
+    void on_pushButton_2_clicked();
 };
 
 #endif // SECOND_TIMEZONE_H

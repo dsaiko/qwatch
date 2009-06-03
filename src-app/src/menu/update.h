@@ -19,50 +19,53 @@
  * QWatch - analog watch with extended functionality
  * under GPL Licence
  *
- * Configuration dialog for setting alarm clock
+ * Update dialog
  */
 
-#ifndef SET_ALARMCLOCK_H
-#define SET_ALARMCLOCK_H
+#ifndef UPDATEDLG_H
+#define UPDATEDLG_H
 
 
 #include <QtGui/QDialog>
 #include "config/configuration.h"
 
-#include "ui_set-alarmclock.h"
+#include "ui_update.h"
+
+class QWatch;
+
+struct UpdateInfo {
+    QString availableVersion;
+    QString releaseDate;
+    QString downloadFile;
+    QString fileSize;
+    QString fileMD5;
+};
 
 namespace Ui
 {
-    class SetAlarmClockDialogClass;
+    class UpdateDialogClass;
 }
 
-class SetAlarmClockDialog : public QDialog
+class UpdateDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    SetAlarmClockDialog(QWidget *parent, Configuration *config);
-    ~SetAlarmClockDialog();
-    void setDefaults();
+    UpdateDialog(QWatch *parent);
+    ~UpdateDialog();
+    Ui::UpdateDialogClass *ui;
+    void init();
+protected:
+    QWatch *qwatch;
 
-private:
-    Ui::SetAlarmClockDialogClass *ui;
-    Configuration *config;
-
-protected slots:
-    void setAlarmClock();
-
-signals:
-    void alarmTimeChanged(QTime time);
-
+    UpdateInfo *updateInfo;
+    QString *localPath;
 
 private slots:
-    void on_pushButton_2_clicked();
-    void on_comboBoxMinutes_highlighted(int index);
-    void on_comboBoxHours_highlighted(int index);
-    void on_comboBoxMinutes2_highlighted(int index);
-
-    friend class QWatch;
+    void on_btnInstall_clicked();
+    void on_btnDownload_clicked();
+    void on_btnQuery_clicked();
+    void on_btnClose_clicked();
 };
 
-#endif // SET_ALARMCLOCK_H
+#endif // UPDATEDLG_H

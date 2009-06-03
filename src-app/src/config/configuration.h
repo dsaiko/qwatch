@@ -42,8 +42,10 @@ class Configuration {
         void setInt(QString key, int value);
         void setString(QString key, QString value);
         QString getConfigFolderName() { return configFolderName; }
+        QString getSettingsFolder();
     protected:
         QString configFolderName;
+        QString settingsFolder;
         bool load();
         bool save();
 

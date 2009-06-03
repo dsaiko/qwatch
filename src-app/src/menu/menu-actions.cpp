@@ -32,6 +32,7 @@ void QWatch::displaySecondTimeZoneDialog() {
        timeZoneDialog = new SecontTimeZoneDialog(this, timeZones, configuration);
        connect(timeZoneDialog, SIGNAL(timeZoneChanged()), this, SLOT(updateSecondClockTimeDifference()));
     }
+    timeZoneDialog->setDefaults();
     timeZoneDialog->show();
 }
 
@@ -208,6 +209,9 @@ void QWatch::retranslateUi()
     if(calendarDialog != NULL) { calendarDialog->ui->retranslateUi(calendarDialog); }
     if(timeZoneDialog != NULL) { timeZoneDialog->ui->retranslateUi(timeZoneDialog); }
     if(alarmClockDialog != NULL) { alarmClockDialog->ui->retranslateUi(alarmClockDialog); }
+#ifdef Q_OS_WIN
+    if(updateDialog!=NULL) { updateDialog->ui->retranslateUi(updateDialog); }
+#endif
     if(aboutDialog != NULL)    {
         aboutDialog->ui->retranslateUi(aboutDialog);
         QString html = aboutDialog->ui->textBrowser_2->toHtml().replace("VERSIONINFO",getVersion());
@@ -236,3 +240,17 @@ void QWatch::retranslateUi()
     aboutAction->setText(aboutAction->text()+" "+STR_APPTITLE+" "+getVersion());
 }
 
+
+#ifdef Q_OS_WIN
+void QWatch::updateApplication() {
+    if( updateDialog == NULL) {
+       updateDialog = new UpdateDialog(this);
+    }
+    updateDialog->init();
+    updateDialog->show();
+}
+
+void QWatch::autoUpdateApplication() {
+    configuration->setInt(CONFIG_AUTOUPDATE,autoUpdateAction->isChecked() ? 1 : 0);
+}
+#endif

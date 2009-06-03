@@ -31,11 +31,13 @@
 #endif
 
 #define CONFIG_SECONDTIMEZONE   "SecondTimeZone"
+#define CONFIG_SECONDTIMEZONE_LABEL   "SecondTimeZoneLabel"
 #define CONFIG_TRANSPARENCY     "Transparency"
 #define CONFIG_FRAMELESSWINDOW  "FramelessWindow"
 #define CONFIG_ENABLEALARM      "AlarmEnabled"
 #define CONFIG_ALARMCLOCK       "AlarmClock"
 #define CONFIG_CLOCKSIZE        "ClockSize"
 #define CONFIG_LANGUAGE         "Language"
+#define CONFIG_AUTOUPDATE       "AutoUpdateEnabled"
 
 #endif // CONSTANTS_CONFIG_H

@@ -79,6 +79,16 @@ void QWatch::initPopupMenu()
     aboutAction->setIcon(QIcon(":/about.png"));
 
 
+#ifdef Q_OS_WIN
+    QAction *updateAction
+        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Update application ..."), true, SIGNAL(triggered()), this, SLOT(updateApplication()));
+    updateAction->setIcon(QIcon(":/update.png"));
+
+    autoUpdateAction
+        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Allow monthly query of application update"), true, SIGNAL(triggered()), this, SLOT(autoUpdateApplication()),true);
+    autoUpdateAction->setChecked(configuration->getInt(CONFIG_AUTOUPDATE,1));
+#endif
+
     QAction *alarmClockSettingsAction
         = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Set alarm clock"), true, SIGNAL(triggered()), this, SLOT(displayAlarmClockDialog()));
     alarmClockSettingsAction->setIcon(QIcon(":/alarm.png"));
@@ -223,6 +233,11 @@ void QWatch::initPopupMenu()
     popupMenu->addAction(enableAlarmClockAction);
     popupMenu->addAction(alarmClockSettingsAction);
     popupMenu->addAction(stopAlarmClockAction);
+    #ifdef Q_OS_WIN
+    popupMenu->addSeparator();
+    popupMenu->addAction(updateAction);
+    popupMenu->addAction(autoUpdateAction);
+    #endif
     popupMenu->addSeparator();
     popupMenu->addAction(showAction);
     popupMenu->addAction(hideAction);

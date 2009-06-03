@@ -53,16 +53,6 @@ SOURCES +=      src/main.cpp \
                 src/sound/sound.cpp \
                 src/menu/second-timezone.cpp
 
-win32 {
-    LIBS    +=  -lwinmm
-    RC_FILE =   res/qwatch.rc
-}
-
-
-unix {
-    QMAKE_LIBS +=   -lasound
-}
-
 FORMS +=        ui/second-timezone.ui \
                 ui/set-alarmclock.ui \
                 ui/calendar.ui \
@@ -74,3 +64,19 @@ RESOURCES +=    res/resources.qrc
 TRANSLATIONS =  ../lang/qwatch_cs.ts \
                 ../lang/qwatch_en.ts \
                 ../lang/qwatch_de.ts
+
+win32 {
+    LIBS    +=  -lwinmm
+    RC_FILE =   res/qwatch.rc
+    LIBS += -lwininet
+    SOURCES +=  src/update/inet.cpp src/update/md5.cpp src/menu/update.cpp
+    HEADERS +=  src/update/inet.h src/update/md5.h src/menu/update.h
+    FORMS += ui/update.ui
+
+    DEFINES += _WIN32_WINNT=0x0500
+}
+
+
+unix {
+    QMAKE_LIBS +=   -lasound
+}

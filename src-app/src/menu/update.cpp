@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev$
+ * $Rev: 23 $
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -22,20 +22,21 @@
  * About dialog
  */
 
-#include "menu/about.h"
+#include "menu/update.h"
 #include "version.h"
 #include "config/constants-config.h"
 #include "qwatch.h"
-#include <QDebug>
-#include <QDate>
 
-AboutDialog::AboutDialog(QWidget *parent)
-    : QDialog(parent), ui(new Ui::AboutDialogClass)
+
+UpdateDialog::UpdateDialog(QWatch *parent)
+    : QDialog(parent), ui(new Ui::UpdateDialogClass)
 {
     ui->setupUi(this);
+    this->qwatch = parent;
+    updateInfo = NULL;
+    localPath = NULL;
 
-    ui->textBrowser_2->viewport()->setAutoFillBackground(false);
-
+    ui->editInstalledVersion->setText(getVersion());
     QDate versionDate = getVersionDate();
     QString date=versionDate.toString(Qt::DefaultLocaleShortDate);
     QString fullYear=versionDate.toString("yyyy");
@@ -43,21 +44,42 @@ AboutDialog::AboutDialog(QWidget *parent)
     if(date.contains(fullYear) == false) {
         date = date.replace(shortYear,fullYear);
     }
-    QString html = ui->textBrowser_2->toHtml().replace("VERSIONINFO",(getVersion()+" ("+date+")"));
-#ifdef INTERSHOP
-    html=html.replace("QWatch",QString("Intershop ")+STR_APPTITLE);
-#endif
+    ui->editReleaseDate->setText(date);
+    ui->editApplicationName->setText(STR_APPTITLE);
 
-    ui->textBrowser_2->setHtml(html);
 }
 
 
-AboutDialog::~AboutDialog()
+void UpdateDialog::init()
+{
+}
+
+UpdateDialog::~UpdateDialog()
 {
     delete ui;
+    if(localPath)
+        delete localPath;
+    if(updateInfo)
+        delete updateInfo;
 }
 
-void AboutDialog::on_pushButton_3_clicked()
+void UpdateDialog::on_btnClose_clicked()
 {
     hide();
 }
+
+void UpdateDialog::on_btnQuery_clicked()
+{
+
+}
+
+void UpdateDialog::on_btnDownload_clicked()
+{
+
+}
+
+void UpdateDialog::on_btnInstall_clicked()
+{
+
+}
+
