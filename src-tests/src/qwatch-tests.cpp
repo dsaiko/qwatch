@@ -15,6 +15,7 @@
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
  * $Rev: 45 $
+ * $Id$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence
@@ -22,7 +23,7 @@
  * Unit tests
  */
 
-#include "inc/qwatch-tests.h"
+#include "qwatch-tests.h"
 #include "config/configuration.h"
 #include "qwatch.h"
 #include "sound/sound.h"

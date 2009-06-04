@@ -1,6 +1,7 @@
 # QWatch project file - application
 # (c) Dusan Saiko dusan.saiko@gmail.com
 # $Rev$
+# $Id$
 
 
 TEMPLATE =      app

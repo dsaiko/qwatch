@@ -1,6 +1,7 @@
 # QWatch project file - tests
 # (c) Dusan Saiko dusan.saiko@gmail.com
 # $Rev: 46 $
+# $Id$
 
 TEMPLATE = app
 QT += testlib xml
@@ -12,9 +13,9 @@ UI_DIR = ../build/tests
 RCC_DIR = ../build/tests
 DESTDIR = ../build
 
-INCLUDEPATH += . ../src-app/ ../src-app/src
+INCLUDEPATH += . ../src-app/ ../src-app/src src/
 
-HEADERS += inc/qwatch-tests.h
+HEADERS += src/qwatch-tests.h
 SOURCES += src/qwatch-tests.cpp
 
 

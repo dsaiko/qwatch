@@ -20,13 +20,17 @@
  * QWatch - analog watch with extended functionality
  * under GPL Licence
  *
- * Constants
+ * Unit tests
  */
 
-#ifndef CONSTANTS_APP_H
-#define CONSTANTS_APP_H
+#include <QtTest/QtTest>
 
-#define WINDOWS_FLAGS_FRAMELESS     Qt::Tool|Qt::WindowStaysOnTopHint|Qt::X11BypassWindowManagerHint|Qt::FramelessWindowHint
-#define WINDOWS_FLAGS_FRAME         Qt::Tool|Qt::WindowStaysOnTopHint
-
-#endif // CONSTANTS_APP_H
+ class QWatchTests: public QObject
+ {
+     Q_OBJECT
+ private slots:
+     void testConfiguration();
+     void testGui();
+     void testSound();
+     void testVersion();
+ };
