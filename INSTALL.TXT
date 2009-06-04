@@ -16,6 +16,6 @@ LINUX:
 Windows:
 - install QT development SDK from www.qtsoftware.com (OpenSource)
 - build using QTCreator or command line
-- default build builds application dynamically - it will depend on QT .dll(s) and mingwm10.dll, but you can avoid
-  this by reconfiguring Qt to build in statically. See Qt documentation for this.
+- default QT configuration builds application dynamically - it will depend on QT .dlls and mingwm10.dll, but you can avoid
+  this by reconfiguring Qt to build in statically. See Qt documentation.
 
