@@ -1,6 +1,6 @@
 # QWatch project file - tests
 # (c) Dusan Saiko dusan.saiko@gmail.com
-# $Rev: 46 $
+# $Rev$
 # $Id$
 
 TEMPLATE = app

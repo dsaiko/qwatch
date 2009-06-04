@@ -1,0 +1,47 @@
+setting svn properties
+
+--This line, and those below, will be ignored--
+
+M    lang/qwatch_cs.ts
+M    lang/qwatch_de.ts
+M    lang/qwatch_en.ts
+MM   src-app/src/constants-app.h
+MM   src-app/src/update/inet.cpp
+MM   src-app/src/update/inet.h
+_M   src-app/src/update/md5.cpp
+_M   src-app/src/update/md5.h
+MM   src-app/src/sound/sound.cpp
+MM   src-app/src/sound/sound.h
+MM   src-app/src/timezones-win.cpp
+MM   src-app/src/timezones-linux.cpp
+MM   src-app/src/graphics/constants-graphics.h
+MM   src-app/src/graphics/alarmanimation.h
+MM   src-app/src/graphics/painter.cpp
+MM   src-app/src/graphics/painter.h
+MM   src-app/src/graphics/painter-alarmclock.cpp
+MM   src-app/src/graphics/painter-trayicon.cpp
+MM   src-app/src/graphics/painter-secondtime.cpp
+MM   src-app/src/graphics/alarmanimation.cpp
+MM   src-app/src/timezones.h
+MM   src-app/src/menu/calendar.h
+MM   src-app/src/menu/about.h
+MM   src-app/src/menu/set-alarmclock.cpp
+MM   src-app/src/menu/menu-actions.cpp
+MM   src-app/src/menu/update.cpp
+MM   src-app/src/menu/second-timezone.cpp
+MM   src-app/src/menu/menu.cpp
+MM   src-app/src/menu/set-alarmclock.h
+MM   src-app/src/menu/update.h
+MM   src-app/src/menu/second-timezone.h
+MM   src-app/src/menu/calendar.cpp
+MM   src-app/src/config/constants-config.h
+MM   src-app/src/config/configuration.cpp
+MM   src-app/src/config/configuration.h
+MM   src-app/src/version.cpp
+M    src-app/src/version.h
+MM   src-app/src/qwatch.h
+AM   scripts/touch
+_M   scripts/deploy-00-howto.txt
+MM   src-tests/src-tests.pro
+MM   src-tests/src/qwatch-tests.cpp
+MM   src-tests/src/qwatch-tests.h

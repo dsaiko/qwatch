@@ -14,7 +14,7 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 23 $
+ * $Rev$
  * $Id$
  *
  * QWatch - analog watch with extended functionality
