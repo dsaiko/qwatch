@@ -27,6 +27,7 @@
 #include "version.h"
 #include "config/constants-config.h"
 #include "qwatch.h"
+#include "update/query-upgrade.h"
 
 
 UpdateDialog::UpdateDialog(QWatch *parent)
@@ -47,6 +48,13 @@ UpdateDialog::UpdateDialog(QWatch *parent)
     }
     ui->editReleaseDate->setText(date);
     ui->editApplicationName->setText(STR_APPTITLE);
+
+    ui->btnDownload->setEnabled(false);
+    ui->btnInstall->setEnabled(false);
+    ui->progressBar->setEnabled(false);
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(1);
+    ui->progressBar->setValue(0);
 
 }
 
@@ -72,6 +80,9 @@ void UpdateDialog::on_btnClose_clicked()
 void UpdateDialog::on_btnQuery_clicked()
 {
 
+    QueryUpgrade *query = new QueryUpgrade();
+
+    query->start();
 }
 
 void UpdateDialog::on_btnDownload_clicked()

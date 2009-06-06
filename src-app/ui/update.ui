@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Application update ...</string>
+   <string>Application upgrade ...</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -26,7 +26,7 @@
      <item row="5" column="2">
       <widget class="QPushButton" name="btnInstall">
        <property name="text">
-        <string>Start update</string>
+        <string>Start upgrade</string>
        </property>
       </widget>
      </item>
@@ -180,12 +180,15 @@
        <property name="value">
         <number>24</number>
        </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item row="5" column="0">
       <widget class="QPushButton" name="btnQuery">
        <property name="text">
-        <string>Query current version</string>
+        <string>Query latest version</string>
        </property>
       </widget>
      </item>

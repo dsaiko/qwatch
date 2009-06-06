@@ -82,11 +82,11 @@ void QWatch::initPopupMenu()
 
 #ifdef Q_OS_WIN
     QAction *updateAction
-        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Update application ..."), true, SIGNAL(triggered()), this, SLOT(updateApplication()));
+        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Upgrade application ..."), true, SIGNAL(triggered()), this, SLOT(updateApplication()));
     updateAction->setIcon(QIcon(":/update.png"));
 
     autoUpdateAction
-        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Allow monthly query of application update"), true, SIGNAL(triggered()), this, SLOT(autoUpdateApplication()),true);
+        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Allow monthly upgrade query"), true, SIGNAL(triggered()), this, SLOT(autoUpdateApplication()),true);
     autoUpdateAction->setChecked(configuration->getInt(CONFIG_AUTOUPDATE,1));
 #endif
 

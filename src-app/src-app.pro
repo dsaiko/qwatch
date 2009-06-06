@@ -70,8 +70,8 @@ win32 {
     LIBS    +=  -lwinmm
     RC_FILE =   res/qwatch.rc
     LIBS += -lwininet
-    SOURCES +=  src/update/inet.cpp src/update/md5.cpp src/menu/update.cpp
-    HEADERS +=  src/update/inet.h src/update/md5.h src/menu/update.h
+    SOURCES +=  src/update/inet.cpp src/update/md5.cpp src/menu/update.cpp src/update/query-upgrade.cpp
+    HEADERS +=  src/update/inet.h src/update/md5.h src/menu/update.h src/update/query-upgrade.h
     FORMS += ui/update.ui
 
     DEFINES += _WIN32_WINNT=0x0500

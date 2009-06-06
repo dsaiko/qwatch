@@ -40,6 +40,7 @@ struct UpdateInfo {
     QString downloadFile;
     QString fileSize;
     QString fileMD5;
+    QString localFilePath;
 };
 
 namespace Ui

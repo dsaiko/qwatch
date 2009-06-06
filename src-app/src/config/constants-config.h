@@ -26,9 +26,17 @@
 #define CONSTANTS_CONFIG_H
 
 #ifdef INTERSHOP
+#ifdef Q_OS_WIN
+#define CONFIG_FOLDER           "iswatch"
+#else
 #define CONFIG_FOLDER           ".iswatch"
+#endif
+#else
+#ifdef Q_OS_WIN
+#define CONFIG_FOLDER           "qwatch"
 #else
 #define CONFIG_FOLDER           ".qwatch"
+#endif
 #endif
 
 #define CONFIG_SECONDTIMEZONE   "SecondTimeZone"
