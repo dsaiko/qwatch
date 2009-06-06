@@ -32,7 +32,7 @@
 
 #define MAJORVERSION    "1.0."
 #define MINORVERSION    "$Rev$"
-#define VERSIONDATE     "$Date: 2009-06-03 23:59:27 +1000 (Wed, 03 Jun 2009) $"
+#define VERSIONDATE     "$Date$"
 
 QString getVersion();
 QDate getVersionDate();
@@ -90,3 +90,4 @@ QDate getVersionDate();
 // Rev 37,  Thu Jun 4 18:02:00 EST 2009
 // Rev 37,  Thu Jun 4 18:04:41 EST 2009
 // Rev 38,  Thu Jun 4 18:11:27 EST 2009
+// Rev 40,  Sat Jun 6 17:35:33 EST 2009

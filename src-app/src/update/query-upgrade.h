@@ -14,8 +14,8 @@
  *
  * Copyright (C) 2009 Dusan Saiko dusan.saiko@gmail.com
  *
- * $Rev: 38 $
- * $Id: inet.h 38 2009-06-04 08:07:10Z dusan.saiko $
+ * $Rev$
+ * $Id$
  *
  * QWatch - analog watch with extended functionality
  * under GPL Licence

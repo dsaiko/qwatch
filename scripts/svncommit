@@ -19,7 +19,7 @@ then
 	sourcefile=$(echo $file | egrep "\\.(h|cpp|pro|txt)$")
 	if [ "$sourcefile" != "" ]
 	then
-	    svn propset svn:keywords "Id Rev" $file
+	    svn propset svn:keywords "Id Rev Date" $file
 	fi
     done
     for file in $(svn status | grep ! | awk '{print $2}')
