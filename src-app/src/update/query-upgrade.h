@@ -39,12 +39,14 @@ class QueryUpgrade : public QThread
     Q_OBJECT
 
 signals:
-    void queryFinished(bool okflag, UpdateInfo &updateInfo);
+    void queryFinished(bool okflag, UpdateInfo *updateInfo);
 
 public:
-    QueryUpgrade();
+    QueryUpgrade(QString lang);
     ~QueryUpgrade();
     void run();
+protected:
+    QString lang;
 };
 
 #endif // QUERY_UPGRADE_H

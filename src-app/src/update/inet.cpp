@@ -25,6 +25,7 @@
 
 #include "update/inet.h"
 #include <QString>
+#include <QDebug>
 
 
 Inet::Inet()
@@ -55,8 +56,23 @@ HINTERNET Inet::openUrl(QString URL)
     DWORD nSize = 1024;
     InternetCanonicalizeUrl((WCHAR*)URL.utf16(), canonicalURL, &nSize, ICU_BROWSER_MODE);
 
-    DWORD options = INTERNET_FLAG_HYPERLINK|INTERNET_FLAG_RESYNCHRONIZE|INTERNET_FLAG_RELOAD;
+    DWORD options = INTERNET_FLAG_HYPERLINK|INTERNET_FLAG_RESYNCHRONIZE|INTERNET_FLAG_RELOAD|INTERNET_FLAG_NO_COOKIES;
     HINTERNET hSession = InternetOpenUrl(hInternet, canonicalURL, NULL, 0, options, 0);
+
+    char sizeBuffer[64];
+    DWORD sizeBufferLength = 64;
+    bool bRet = HttpQueryInfo(hSession, HTTP_QUERY_STATUS_CODE, sizeBuffer, &sizeBufferLength, NULL);
+    if(bRet) {
+        int responseCode = QString::fromStdWString((TCHAR*)sizeBuffer).toInt();
+        if(responseCode != 200) {
+            bRet = false;
+            qDebug() << "Can not open URL - response code" << responseCode;
+        }
+    }
+    if(bRet == false) {
+        InternetCloseHandle(hSession);
+        return NULL;
+    }
 
     return hSession;
 }
@@ -75,8 +91,8 @@ bool Inet::isInternetAvailable()
 
 long Inet::getFileSize(HINTERNET hSession)
 {
-    if(!hSession) return 0;
-    if(!internetAvailable) return 0;
+    if(!hSession) return -1;
+    if(!internetAvailable) return -1;
 
     char sizeBuffer[64];
     DWORD sizeBufferLength = 64;
@@ -85,7 +101,7 @@ long Inet::getFileSize(HINTERNET hSession)
     if(bRet) {
         return QString::fromStdWString((TCHAR*)sizeBuffer).toLong();
     }
-    return 0;
+    return -1;
 }
 
 

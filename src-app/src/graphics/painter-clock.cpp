@@ -61,6 +61,7 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
 
 
     static const QFont font2("verdana",7,0);
+    static const QFont font3("verdana",6,0);
     static const QColor alarmRed(192,0,0,255);
 
     painter->setRenderHint(QPainter::Antialiasing);
@@ -137,8 +138,8 @@ void ClockPainter::paintClock(QWatch *app, QPainter *painter, QTime time, int si
         if(app->enableAlarmClockAction->isChecked()) {
             painter->setBrush(alarmRed);
         }
-        static const QRect r3(-68, 25, 50, 11);
-        drawPath(painter, font2, r3, r3.bottom(), "ALR");
+        static const QRect r3(-67, 25, 50, 11);
+        drawPath(painter, font3, r3, r3.bottom(), "ALARM");
 
         paintDigits(painter,trayiconmode);
     }

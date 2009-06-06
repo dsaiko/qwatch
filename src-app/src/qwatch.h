@@ -170,6 +170,7 @@ protected:
     friend class ClockPainter;
     friend class AlarmAnimation;
     friend class QWatchTests;
+    friend class UpdateDialog;
 };
 
 #endif //QWATCH_H

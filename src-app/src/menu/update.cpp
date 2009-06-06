@@ -28,6 +28,8 @@
 #include "config/constants-config.h"
 #include "qwatch.h"
 #include "update/query-upgrade.h"
+#include <QMessageBox>
+#include <QLocale>
 
 
 UpdateDialog::UpdateDialog(QWatch *parent)
@@ -80,9 +82,70 @@ void UpdateDialog::on_btnClose_clicked()
 void UpdateDialog::on_btnQuery_clicked()
 {
 
-    QueryUpgrade *query = new QueryUpgrade();
 
+    QueryUpgrade *query = new QueryUpgrade(qwatch->configuration->getString(CONFIG_LANGUAGE,""));
+    connect(query, SIGNAL(queryFinished(bool,UpdateInfo*)), this, SLOT(queryFinished(bool,UpdateInfo*)));
+
+    ui->btnQuery->setEnabled(false);
     query->start();
+}
+
+void UpdateDialog::queryFinished(bool ok, UpdateInfo * updateInfo)
+{
+    QString queryStatusTitle = tr("Query Upgrade Status");
+    QString newVersionAvailable = tr("New version is available! You can proceed by downloading the application installer.");
+    QString noNewVersion = tr("Your application is up to date. Thank you for your interest.");
+
+    if(ok) {       
+        ui->editAvailableVersion->setText(updateInfo->availableVersion);
+        QDate versionDate = updateInfo->releaseDate;
+        QString date=versionDate.toString(Qt::DefaultLocaleShortDate);
+        QString fullYear=versionDate.toString("yyyy");
+        QString shortYear=versionDate.toString("yy");
+        if(date.contains(fullYear) == false) {
+            date = date.replace(shortYear,fullYear);
+        }
+        ui->editAvailableReleaseDate->setText(date);
+        ui->editDownloadFile->setText(updateInfo->downloadFile);
+        ui->editFileMD5->setText(updateInfo->fileMD5);
+        QLocale locale;
+        ui->editFileSize->setText(locale.toString((int)updateInfo->fileSize/1024)+" kB");
+
+        if(updateInfo->isNewVersion) {
+            ui->editChangelog->setText(newVersionAvailable+"\n\n"+updateInfo->changelog);
+        } else {
+            ui->editChangelog->setText(noNewVersion+"\n\n"+updateInfo->changelog);
+            ok=false;
+        }
+    } else {
+        QMessageBox::critical(this, tr("Query Upgrade Error"),
+                              tr("Error while quering application upgrade info."),
+                              QMessageBox::Close,
+                              QMessageBox::Close);
+    }
+
+    if(ok) {
+        ui->btnQuery->setEnabled(true);
+        ui->btnDownload->setEnabled(true);
+        ui->btnInstall->setEnabled(false);
+        ui->progressBar->setEnabled(false);
+        ui->progressBar->setMinimum(0);
+        ui->progressBar->setMaximum(1);
+        ui->progressBar->setValue(0);
+        ui->btnDownload->setFocus();
+    } else {
+        ui->btnQuery->setEnabled(true);
+        ui->btnDownload->setEnabled(false);
+        ui->btnInstall->setEnabled(false);
+        ui->progressBar->setEnabled(false);
+        ui->progressBar->setMinimum(0);
+        ui->progressBar->setMaximum(1);
+        ui->progressBar->setValue(0);
+    }
+
+    if(updateInfo) {
+        delete updateInfo;
+    }
 }
 
 void UpdateDialog::on_btnDownload_clicked()

@@ -51,13 +51,14 @@ QWatch::QWatch(QWidget *parent)
     appTranslator = new QTranslator(this);
     QString lang = configuration->getString(CONFIG_LANGUAGE,"");
 
-    if(lang.length() > 0) {
-        appTranslator->load("qwatch_" + lang,":/translations");
-        qtTranslator->load("qt_" + lang, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    } else {
-        appTranslator->load("qwatch_" + QLocale::system().name(),":/translations");
-        qtTranslator->load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    if(lang.length() == 0) {
+        lang = QLocale::system().name();
+        configuration->setString(CONFIG_LANGUAGE,lang);
     }
+    appTranslator->load("qwatch_" + lang,":/translations");
+    qtTranslator->load("qt_" + lang, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+
+
     qApp->installTranslator(qtTranslator);
     qApp->installTranslator(appTranslator);
 

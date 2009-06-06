@@ -36,11 +36,13 @@ class QWatch;
 
 struct UpdateInfo {
     QString availableVersion;
-    QString releaseDate;
+    QDate releaseDate;
     QString downloadFile;
-    QString fileSize;
+    long fileSize;
     QString fileMD5;
+    QString changelog;
     QString localFilePath;
+    bool    isNewVersion;
 };
 
 namespace Ui
@@ -68,6 +70,7 @@ private slots:
     void on_btnDownload_clicked();
     void on_btnQuery_clicked();
     void on_btnClose_clicked();
+    void queryFinished(bool,UpdateInfo *);
 };
 
 #endif // UPDATEDLG_H
