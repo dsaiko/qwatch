@@ -25,3 +25,10 @@ mv qwatch.exe qwatch-$VERSION.exe
 
 upx -9 iswatch-$VERSION.exe
 upx -9 qwatch-$VERSION.exe
+
+for f in *
+do
+ md5sum $f > $f.md5
+done
+
+
