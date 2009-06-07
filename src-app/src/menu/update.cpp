@@ -66,7 +66,7 @@ UpdateDialog::UpdateDialog(QWatch *parent)
 
 void UpdateDialog::init()
 {
-    int answer = QMessageBox::question(this, tr("Automatical upgrade ..."),
+    int answer = QMessageBox::question(this, tr("Application upgrade ..."),
                                        tr("Query automatically new application version ?"),
                                        QMessageBox::Yes | QMessageBox::No,
                                        QMessageBox::Yes);
@@ -151,7 +151,7 @@ void UpdateDialog::queryFinished(bool ok, UpdateInfo * updateInfo)
         ui->progressBar->setValue(0);
         ui->btnDownload->setFocus();
 
-        int answer = QMessageBox::question(this, tr("Automatical upgrade ..."),
+        int answer = QMessageBox::question(this, tr("Application upgrade ..."),
                                            tr("New version available.\nDownload automatically new application version ?"),
                                            QMessageBox::Yes | QMessageBox::No,
                                            QMessageBox::Yes);
@@ -200,7 +200,7 @@ void UpdateDialog::downloadFinished(bool ok, UpdateInfo * updateInfo)
         ui->btnInstall->setEnabled(true);
         ui->btnInstall->setFocus();
 
-        int answer = QMessageBox::question(this, tr("Automatical upgrade ..."),
+        int answer = QMessageBox::question(this, tr("Application upgrade ..."),
                                            tr("New application version downloaded sucesfully.\nStart upgrade now ?"),
                                            QMessageBox::Yes | QMessageBox::No,
                                            QMessageBox::Yes);

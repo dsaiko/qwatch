@@ -45,7 +45,7 @@ public:
     ~Inet();
 
     bool isInternetAvailable();
-    bool isInternetConnected();
+    static bool isInternetConnected();
     HINTERNET openUrl(QString URL);
     long getFileSize(HINTERNET hSession);
     bool downloadFile(HINTERNET hSession, QIODevice *data, bool emitSignals=true);

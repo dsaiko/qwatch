@@ -82,7 +82,9 @@ public slots:
 
 #ifdef Q_OS_WIN
     void updateApplication();
+    void performMonthlyUpgrade();
     void autoUpdateApplication();
+    void queryFinished(bool, UpdateInfo *);
 #endif
 
     //display about dialog

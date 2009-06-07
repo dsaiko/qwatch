@@ -27,6 +27,11 @@
 #include "version.h"
 #include "config/constants-config.h"
 #include "constants-app.h"
+#include <QDebug>
+#ifdef Q_OS_WIN
+#include "update/inet.h"
+#include "update/query-upgrade.h"
+#endif
 
 void QWatch::displaySecondTimeZoneDialog() {
     if( timeZoneDialog == NULL) {
@@ -253,5 +258,58 @@ void QWatch::updateApplication() {
 
 void QWatch::autoUpdateApplication() {
     configuration->setInt(CONFIG_AUTOUPDATE,autoUpdateAction->isChecked() ? 1 : 0);
+}
+
+void QWatch::performMonthlyUpgrade() {
+    if(autoUpdateAction->isChecked() == false)
+        return;
+
+    QString lastCheck = configuration->getString(CONFIG_LAST_UPDATE_CHECK,"");
+    bool ok = true;
+    QDateTime lastCheckTime;
+    QDateTime now = QDateTime::currentDateTime();
+    if(lastCheck.trimmed().length() == 0) {
+        ok = false;
+    } else {
+        uint t = (uint) lastCheck.toLong(&ok);
+        if(ok) {
+            lastCheckTime=QDateTime::fromTime_t(t);
+            if(now.toTime_t() < t) {
+                ok = false;
+            }
+        }
+    }
+    if(ok == false) {
+        configuration->setString(CONFIG_LAST_UPDATE_CHECK,QString::number(now.toTime_t()));
+        return;
+    }
+    if(lastCheckTime.daysTo(now)<30); return;
+    if(!Inet::isInternetConnected()) {
+        qDebug() << "Automatic upgrade check - not connected to internet.";
+        return;
+    }
+
+    QueryUpgrade *query = new QueryUpgrade(configuration->getString(CONFIG_LANGUAGE,""));
+    connect(query, SIGNAL(queryFinished(bool,UpdateInfo*)), this, SLOT(queryFinished(bool,UpdateInfo*)));
+
+    query->start();
+}
+
+void QWatch::queryFinished(bool ok, UpdateInfo *updateInfo) {
+    if(!ok) {
+        delete updateInfo;
+        return;
+    }
+    configuration->setString(CONFIG_LAST_UPDATE_CHECK,QString::number(QDateTime::currentDateTime().toTime_t()));
+    if(updateInfo->isNewVersion) {
+       if( updateDialog == NULL) {
+        updateDialog = new UpdateDialog(this);
+       }
+       updateDialog->show();
+       updateDialog->queryFinished(ok,updateInfo);
+    } else {
+        delete updateInfo;
+        qDebug() << "Automatic upgrade check - no new version.";
+    }
 }
 #endif

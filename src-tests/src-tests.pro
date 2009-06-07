@@ -57,6 +57,15 @@ SOURCES += \
 
 win32 {
     LIBS    +=  -lwinmm
+    LIBS += -lwininet
+    LIBS += -lole32
+    RC_FILE =   ../src-app/res/qwatch.rc
+
+    SOURCES +=  ../src-app/src/update/inet.cpp ../src-app/src/update/md5.cpp ../src-app/src/menu/update.cpp ../src-app/src/update/query-upgrade.cpp ../src-app/src/update/download-upgrade.cpp
+    HEADERS +=  ../src-app/src/update/inet.h ../src-app/src/update/md5.h ../src-app/src/menu/update.h ../src-app/src/update/query-upgrade.h ../src-app/src/update/download-upgrade.h
+    FORMS += ../src-app/ui/update.ui
+
+    DEFINES += _WIN32_WINNT=0x0500
 }
 
 unix {

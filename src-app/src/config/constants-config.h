@@ -47,6 +47,9 @@
 #define CONFIG_ALARMCLOCK       "AlarmClock"
 #define CONFIG_CLOCKSIZE        "ClockSize"
 #define CONFIG_LANGUAGE         "Language"
-#define CONFIG_AUTOUPDATE       "AutoUpdateEnabled"
+#ifdef Q_OS_WIN
+    #define CONFIG_AUTOUPDATE       "AutoUpdateEnabled"
+    #define CONFIG_LAST_UPDATE_CHECK "LastUpgradeCheck"
+#endif
 
 #endif // CONSTANTS_CONFIG_H

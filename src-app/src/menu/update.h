@@ -63,7 +63,7 @@ protected:
     QWatch *qwatch;
 
     UpdateInfo *updateInfo;
-private slots:
+public slots:
     void on_btnInstall_clicked();
     void on_btnDownload_clicked();
     void on_btnQuery_clicked();

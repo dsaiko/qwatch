@@ -100,10 +100,16 @@ QWatch::QWatch(QWidget *parent)
     connect(timerWindow, SIGNAL(timeout()), this, SLOT(update()));
     timerWindow->start(1000);
 
-
     QTimer *timerTrayIcon = new QTimer(this);
     connect(timerTrayIcon, SIGNAL(timeout()), this, SLOT(updateTrayIcon()));
     timerTrayIcon->start(60*1000);
+
+#ifdef Q_OS_WIN
+    QTimer *timerMonthlyUpgradeCheck = new QTimer(this);
+    connect(timerMonthlyUpgradeCheck, SIGNAL(timeout()), this, SLOT(performMonthlyUpgrade()));
+    //every 90 minutes, check if we should check for new upgrade
+    timerMonthlyUpgradeCheck->start(90*60*1000);
+#endif
 
     QTimer *timerFramelessMode = new QTimer(this);
     connect(timerFramelessMode, SIGNAL(timeout()), this, SLOT(checkFramelessMode()));
