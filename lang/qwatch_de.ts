@@ -133,118 +133,118 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QWatchMenu</name>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="61"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="62"/>
         <source>Show</source>
         <translation>Einblenden</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="63"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="64"/>
         <source>Hide</source>
         <translation>Ausblenden</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="66"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="67"/>
         <source>Quit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="70"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="71"/>
         <source>Second time zone</source>
         <translation>Zweite Zeitzone</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="74"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="75"/>
         <source>Display calendar</source>
         <translation>Kalender anzeigen</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="78"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="79"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="84"/>
-        <source>Update application ...</source>
+        <location filename="../src-app/src/menu/menu.cpp" line="85"/>
+        <source>Upgrade application ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="88"/>
-        <source>Allow monthly query of application update</source>
+        <location filename="../src-app/src/menu/menu.cpp" line="89"/>
+        <source>Allow monthly upgrade query</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="93"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="94"/>
         <source>Set alarm clock</source>
         <translation>Wecker stellen</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="97"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="98"/>
         <source>Stop alarm!</source>
         <translation>Wecker ausschalten</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="102"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="103"/>
         <source>Enable alarm clock</source>
         <translation>Wecker einschalten</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="106"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="107"/>
         <source>Allow frameless window</source>
         <translation>Rahmenloses Fenster zulassen</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="113"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="114"/>
         <source>Fully opaque</source>
         <translation>Durchsichtig</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="128"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="129"/>
         <source>Small</source>
         <translation>Klein</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="130"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="131"/>
         <source>Normal</source>
         <translation>Normal</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="132"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="133"/>
         <source>Large</source>
         <translation>Groß</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="134"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="135"/>
         <source>Even bigger</source>
         <translation>Noch größer</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="136"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="137"/>
         <source>Extra large</source>
         <translation>Sehr groß</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="138"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="139"/>
         <source>Screen size</source>
         <translation>Bildschirmgröße</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="142"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="143"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="157"/>
-        <location filename="../src-app/src/menu/menu.cpp" line="168"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="158"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="169"/>
         <source>English</source>
         <translation>Deutsch</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="204"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="205"/>
         <source>Transparency</source>
         <translation>Transparenz</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="213"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="214"/>
         <source>Clock size</source>
         <translation>Uhrengröße</translation>
     </message>
@@ -321,20 +321,78 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>UpdateDialogClass</name>
+    <name>UpdateDialog</name>
     <message>
-        <location filename="../src-app/ui/update.ui" line="14"/>
-        <source>Application update ...</source>
+        <location filename="../src-app/src/menu/update.cpp" line="69"/>
+        <location filename="../src-app/src/menu/update.cpp" line="154"/>
+        <location filename="../src-app/src/menu/update.cpp" line="203"/>
+        <source>Application upgrade ...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="70"/>
+        <source>Query automatically new application version ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="103"/>
+        <source>Query Upgrade Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="104"/>
+        <source>New version is available! You can proceed by downloading the application installer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="105"/>
+        <source>Your application is up to date. Thank you for your interest.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="138"/>
+        <location filename="../src-app/src/menu/update.cpp" line="191"/>
+        <source>Query Upgrade Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="139"/>
+        <source>Error while quering application upgrade info.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="155"/>
+        <source>New version available.
+Download automatically new application version ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="192"/>
+        <source>Error while downloading application upgrade.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/update.cpp" line="204"/>
+        <source>New application version downloaded sucesfully.
+Start upgrade now ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UpdateDialogClass</name>
     <message>
         <location filename="../src-app/ui/update.ui" line="22"/>
         <source>Download new version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src-app/ui/update.ui" line="14"/>
+        <source>Application upgrade ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src-app/ui/update.ui" line="29"/>
-        <source>Start update</source>
+        <source>Start upgrade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -384,12 +442,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src-app/ui/update.ui" line="188"/>
-        <source>Query current version</source>
+        <location filename="../src-app/ui/update.ui" line="191"/>
+        <source>Query latest version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src-app/ui/update.ui" line="195"/>
+        <location filename="../src-app/ui/update.ui" line="198"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>

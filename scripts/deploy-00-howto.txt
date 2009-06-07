@@ -1,1 +1,0 @@
-- change exe file summary info (manual step)

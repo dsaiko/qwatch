@@ -4,10 +4,10 @@
   !include "MUI2.nsh"
 
   
-  !define	VERSION		"1.0.28"
-  !define	REGISTRYKEY	"Software\qwatch"
-  !define	APPNAME		"QWatch"
-  !define	APPFILE		"qwatch"
+  !define	VERSION		"__VERSION__"
+  !define	REGISTRYKEY	"Software\__APPFILE__"
+  !define	APPNAME		"__APPNAME__"
+  !define	APPFILE		"__APPFILE__"
   
 ;--------------------------------
 ;General
@@ -17,10 +17,10 @@
   ;Name and file
   Name "${APPNAME}"
   Caption "${APPNAME} ${VERSION} Setup"  
-  !define MUI_ICON  "../src-app/res/images/qwatch.ico"
+  !define MUI_ICON  "qwatch.ico"
   !define MUI_WELCOMEFINISHPAGE_BITMAP  "logo-${APPFILE}.bmp"
   !define MUI_UNWELCOMEFINISHPAGE_BITMAP  "logo-${APPFILE}.bmp"
-  OutFile "..\dist\${APPFILE}-${VERSION}-setup.exe"
+  OutFile "${APPFILE}-${VERSION}-setup.exe"
   
 
   ;Default installation folder
@@ -43,7 +43,7 @@
 ;Pages
 
   !insertmacro MUI_PAGE_WELCOME
-  !insertmacro MUI_PAGE_LICENSE "..\LICENSE.TXT"
+  !insertmacro MUI_PAGE_LICENSE "LICENSE.TXT"
   !insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
@@ -111,7 +111,7 @@ Section "-QWatch" SecQWatch
   SetOutPath "$INSTDIR"
 
   ;ADD YOUR OWN FILES HERE...
-  File "..\build\${APPFILE}.exe"
+  File "${APPFILE}.exe"
 
   ;Store installation folder
   WriteRegStr HKCU "${REGISTRYKEY}" "" $INSTDIR
