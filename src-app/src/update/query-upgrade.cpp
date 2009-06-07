@@ -51,7 +51,7 @@ void QueryUpgrade::run()
     UpdateInfo *updateInfo = new UpdateInfo();
 
     Inet internet;
-    QString downloadSite = "http://localhost/";
+    QString downloadSite = "https://qwatch.googlecode.com/files/";
     QString currentVersionFileName = downloadSite+QString(STR_APPTITLE).toLower()+"-currentversion.xml";
     HINTERNET connection = internet.openUrl(currentVersionFileName);
     if(!connection) {

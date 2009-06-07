@@ -14,3 +14,14 @@ cat $SCRIPTFOLDER/win-installer/installer.nsi | sed "s/__VERSION__/$VERSION/" | 
 cat $SCRIPTFOLDER/win-installer/installer.nsi | sed "s/__VERSION__/$VERSION/" | sed "s/__APPFILE__/iswatch/" | sed "s/__APPNAME__/ISWatch/" > iswatch.nsi
 
 cp $SCRIPTFOLDER/win-installer/res/* .
+
+makensis qwatch.nsi
+makensis iswatch.nsi
+
+rm *.nsi *.TXT *.bmp *.ico
+
+mv iswatch.exe iswatch-$VERSION.exe
+mv qwatch.exe qwatch-$VERSION.exe
+
+upx -9 iswatch-$VERSION.exe
+upx -9 qwatch-$VERSION.exe
