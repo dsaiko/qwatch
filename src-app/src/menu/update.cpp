@@ -28,8 +28,11 @@
 #include "config/constants-config.h"
 #include "qwatch.h"
 #include "update/query-upgrade.h"
+#include "update/download-upgrade.h"
 #include <QMessageBox>
 #include <QLocale>
+#include <qt_windows.h>
+#include <shellapi.h>
 
 
 UpdateDialog::UpdateDialog(QWatch *parent)
@@ -38,7 +41,6 @@ UpdateDialog::UpdateDialog(QWatch *parent)
     ui->setupUi(this);
     this->qwatch = parent;
     updateInfo = NULL;
-    localPath = NULL;
 
     ui->editInstalledVersion->setText(getVersion());
     QDate versionDate = getVersionDate();
@@ -58,18 +60,24 @@ UpdateDialog::UpdateDialog(QWatch *parent)
     ui->progressBar->setMaximum(1);
     ui->progressBar->setValue(0);
 
+    this->updateInfo = NULL;
 }
 
 
 void UpdateDialog::init()
 {
+    int answer = QMessageBox::question(this, tr("Automatical upgrade ..."),
+                                       tr("Query automatically new application version ?"),
+                                       QMessageBox::Yes | QMessageBox::No,
+                                       QMessageBox::Yes);
+    if(answer == QMessageBox::Yes) {
+        on_btnQuery_clicked();
+    }
 }
 
 UpdateDialog::~UpdateDialog()
 {
     delete ui;
-    if(localPath)
-        delete localPath;
     if(updateInfo)
         delete updateInfo;
 }
@@ -81,12 +89,12 @@ void UpdateDialog::on_btnClose_clicked()
 
 void UpdateDialog::on_btnQuery_clicked()
 {
-
-
     QueryUpgrade *query = new QueryUpgrade(qwatch->configuration->getString(CONFIG_LANGUAGE,""));
     connect(query, SIGNAL(queryFinished(bool,UpdateInfo*)), this, SLOT(queryFinished(bool,UpdateInfo*)));
 
     ui->btnQuery->setEnabled(false);
+    ui->btnDownload->setEnabled(false);
+    ui->btnInstall->setEnabled(false);
     query->start();
 }
 
@@ -95,6 +103,11 @@ void UpdateDialog::queryFinished(bool ok, UpdateInfo * updateInfo)
     QString queryStatusTitle = tr("Query Upgrade Status");
     QString newVersionAvailable = tr("New version is available! You can proceed by downloading the application installer.");
     QString noNewVersion = tr("Your application is up to date. Thank you for your interest.");
+
+    if(this->updateInfo) {
+        delete this->updateInfo;
+    }
+    this->updateInfo = updateInfo;
 
     if(ok) {       
         ui->editAvailableVersion->setText(updateInfo->availableVersion);
@@ -116,6 +129,10 @@ void UpdateDialog::queryFinished(bool ok, UpdateInfo * updateInfo)
         } else {
             ui->editChangelog->setText(noNewVersion+"\n\n"+updateInfo->changelog);
             ok=false;
+            QMessageBox::information(this, queryStatusTitle,
+                                     noNewVersion,
+                                     QMessageBox::Close,
+                                     QMessageBox::Close);
         }
     } else {
         QMessageBox::critical(this, tr("Query Upgrade Error"),
@@ -133,6 +150,14 @@ void UpdateDialog::queryFinished(bool ok, UpdateInfo * updateInfo)
         ui->progressBar->setMaximum(1);
         ui->progressBar->setValue(0);
         ui->btnDownload->setFocus();
+
+        int answer = QMessageBox::question(this, tr("Automatical upgrade ..."),
+                                           tr("New version available.\nDownload automatically new application version ?"),
+                                           QMessageBox::Yes | QMessageBox::No,
+                                           QMessageBox::Yes);
+        if(answer == QMessageBox::Yes) {
+            on_btnDownload_clicked();
+        }
     } else {
         ui->btnQuery->setEnabled(true);
         ui->btnDownload->setEnabled(false);
@@ -142,19 +167,59 @@ void UpdateDialog::queryFinished(bool ok, UpdateInfo * updateInfo)
         ui->progressBar->setMaximum(1);
         ui->progressBar->setValue(0);
     }
-
-    if(updateInfo) {
-        delete updateInfo;
-    }
 }
 
 void UpdateDialog::on_btnDownload_clicked()
 {
+    DownloadUpgrade *download = new DownloadUpgrade(ui->progressBar, this->updateInfo);
+    connect(download, SIGNAL(downloadFinished(bool,UpdateInfo*)), this, SLOT(downloadFinished(bool,UpdateInfo*)));
 
+    ui->btnQuery->setEnabled(false);
+    ui->btnDownload->setEnabled(false);
+    ui->btnInstall->setEnabled(false);
+    ui->progressBar->setEnabled(true);
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(updateInfo->fileSize);
+    ui->progressBar->setValue(0);
+
+    download->start();
+}
+
+void UpdateDialog::downloadFinished(bool ok, UpdateInfo * updateInfo)
+{
+    if(!ok) {
+        QMessageBox::critical(this, tr("Query Upgrade Error"),
+                              tr("Error while downloading application upgrade."),
+                              QMessageBox::Close,
+                              QMessageBox::Close);
+    }
+
+    if(ok) {
+        ui->btnQuery->setEnabled(true);
+        ui->btnDownload->setEnabled(true);
+        ui->btnInstall->setEnabled(true);
+        ui->btnInstall->setFocus();
+
+        int answer = QMessageBox::question(this, tr("Automatical upgrade ..."),
+                                           tr("New application version downloaded sucesfully.\nStart upgrade now ?"),
+                                           QMessageBox::Yes | QMessageBox::No,
+                                           QMessageBox::Yes);
+        if(answer == QMessageBox::Yes) {
+            on_btnInstall_clicked();
+        }
+
+    } else {
+        ui->btnQuery->setEnabled(true);
+        ui->btnDownload->setEnabled(true);
+    }
 }
 
 void UpdateDialog::on_btnInstall_clicked()
 {
-
+    hide();
+    qwatch->hide();
+    CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    ShellExecuteW(NULL, NULL, (WCHAR*)updateInfo->localFilePath.utf16(), NULL, NULL, SW_SHOWNORMAL);
+    qApp->quit();
 }
 

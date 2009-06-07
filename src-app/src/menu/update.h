@@ -63,14 +63,13 @@ protected:
     QWatch *qwatch;
 
     UpdateInfo *updateInfo;
-    QString *localPath;
-
 private slots:
     void on_btnInstall_clicked();
     void on_btnDownload_clicked();
     void on_btnQuery_clicked();
     void on_btnClose_clicked();
     void queryFinished(bool,UpdateInfo *);
+    void downloadFinished(bool,UpdateInfo *);
 };
 
 #endif // UPDATEDLG_H

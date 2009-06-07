@@ -33,11 +33,17 @@ Inet::Inet()
     hInternet = InternetOpenA("AutoUpdateAgent", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
 
     internetAvailable = true;
-    DWORD dwType;
-    if (hInternet == NULL || (!InternetGetConnectedState(&dwType, 0))) {
+    if (hInternet == NULL) {
         internetAvailable = false;
     }
 }
+
+bool Inet::isInternetConnected() {
+    DWORD dwType;
+    return InternetGetConnectedState(&dwType, 0);
+}
+
+
 
 Inet::~Inet()
 {
@@ -110,6 +116,10 @@ bool Inet::downloadFile(HINTERNET hSession, QIODevice *data, bool emitSignals)
         if(!hSession) return false;
         if(!internetAvailable) return false;
 
+        MD5_CTX md5ctx;
+        MD5 md5;
+        md5.MD5Init(&md5ctx);
+
         static const int TRANSFER_SIZE=4096;
 
         BYTE	buffer[TRANSFER_SIZE];
@@ -122,18 +132,38 @@ bool Inet::downloadFile(HINTERNET hSession, QIODevice *data, bool emitSignals)
                 if (ok && size > 0) {
                         totalSize += size;
                         if(emitSignals) {
-                            emit downloading(totalSize);
+                            emit downloading((int)totalSize);
                         }
                         data->write((char *)buffer, size);
+                        md5.MD5Update(&md5ctx, (unsigned char *)buffer, size);
                 }
                 else {
                     break;
                 }
         }
 
+        unsigned char digest[16];
+        md5.MD5Final(digest, &md5ctx);
+
+
+        char asciihash[33];
+        int p = 0;
+        for(int i=0; i<16; i++)
+        {
+                ::sprintf(&asciihash[p],"%02x",digest[i]);
+                p += 2;
+        }
+        asciihash[32] = '\0';
+        downloadMD5 = QString(asciihash);
+
         if(emitSignals) {
             emit downloadFinished(ok);
         }
 
         return ok;
+}
+
+
+QString Inet::getDownloadMD5() {
+    return downloadMD5;
 }

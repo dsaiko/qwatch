@@ -23,39 +23,33 @@
  * Auto updating functionality
  */
 
-#ifndef INET_H
-#define INET_H
+#ifndef DOWNLOAD_UPGRADE_H
+#define DOWNLOAD_UPGRADE_H
 
 #include "qt_windows.h"
 #include "wininet.h"
+#include <QThread>
 #include <QList>
 #include <QBuffer>
-#include "update/md5.h"
+#include <QProgressBar>
+#include "menu/update.h"
 
-class Inet : public QObject
+
+class DownloadUpgrade : public QThread
 {
     Q_OBJECT
 
-signals:
-    void downloading(int size);
-    void downloadFinished(bool ok);
-
 public:
-    Inet();
-    ~Inet();
+    DownloadUpgrade(QProgressBar *progressBar, UpdateInfo *updateInfo);
+    ~DownloadUpgrade();
+    void run();
 
-    bool isInternetAvailable();
-    bool isInternetConnected();
-    HINTERNET openUrl(QString URL);
-    long getFileSize(HINTERNET hSession);
-    bool downloadFile(HINTERNET hSession, QIODevice *data, bool emitSignals=true);
-    void closeUrl(HINTERNET hSession);
-    QString getDownloadMD5();
+signals:
+    void downloadFinished(bool okflag, UpdateInfo *updateInfo);
 
 protected:
-    HINTERNET hInternet;
-    bool internetAvailable;
-    QString downloadMD5;
+    UpdateInfo *updateInfo;
+    QProgressBar *progressBar;
 };
 
-#endif // INET_H
+#endif // DOWNLOAD_UPGRADE_H

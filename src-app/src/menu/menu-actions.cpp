@@ -247,8 +247,8 @@ void QWatch::updateApplication() {
     if( updateDialog == NULL) {
        updateDialog = new UpdateDialog(this);
     }
-    updateDialog->init();
     updateDialog->show();
+    updateDialog->init();
 }
 
 void QWatch::autoUpdateApplication() {

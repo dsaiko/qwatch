@@ -28,6 +28,27 @@
 #include "config/constants-config.h"
 #include "graphics/constants-graphics.h"
 #include "systeminfo.h"
+#include <QFile>
+#include <QFileInfo>
+
+#ifdef Q_OS_WIN
+void deleteLocalSetupFiles() {
+    QDir configFolder(Configuration::getSettingsFolder() + QDir::separator() + CONFIG_FOLDER);
+    configFolder.mkdir(configFolder.absolutePath());
+
+    QFileInfoList fileList = configFolder.entryInfoList();
+    foreach(QFileInfo fileInfo, fileList) {
+        if(fileInfo.isFile()) {
+            QString filePath = fileInfo.absoluteFilePath();
+            if(filePath.contains(QString(STR_APPTITLE).toLower()+"-") && filePath.endsWith("-setup.exe")) {
+                qDebug() << "Deleting old setup file " << filePath;
+                QFile setupFile(filePath);
+                setupFile.remove();
+            }
+        }
+    }
+}
+#endif
 
 QWatch::QWatch(QWidget *parent)
     : QWidget(parent,WINDOWS_FLAGS_FRAMELESS)
@@ -99,7 +120,9 @@ QWatch::QWatch(QWidget *parent)
     alarmTimeChanged(QTime::currentTime(), true);
     initTray();
     updateTrayIcon();
-
+    #ifdef Q_OS_WIN
+    deleteLocalSetupFiles();
+    #endif
     double opacity = 1.0-configuration->getInt(CONFIG_TRANSPARENCY,10)/100.0;
     setWindowOpacity(opacity);
 }
