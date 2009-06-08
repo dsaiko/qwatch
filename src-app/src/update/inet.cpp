@@ -72,7 +72,7 @@ HINTERNET Inet::openUrl(QString URL)
         int responseCode = QString::fromStdWString((TCHAR*)sizeBuffer).toInt();
         if(responseCode != 200) {
             bRet = false;
-            qDebug() << "Can not open URL - response code" << responseCode;
+            qDebug() << "Can not open URL - response code" << responseCode << URL;
         }
     }
     if(bRet == false) {
