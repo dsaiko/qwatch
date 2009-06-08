@@ -100,6 +100,7 @@ void UpdateDialog::on_btnQuery_clicked()
 
 void UpdateDialog::queryFinished(bool ok, UpdateInfo * updateInfo)
 {
+    if(!isVisible()) return;
     QString queryStatusTitle = tr("Query Upgrade Status");
     QString newVersionAvailable = tr("New version is available! You can proceed by downloading the application installer.");
     QString noNewVersion = tr("Your application is up to date. Thank you for your interest.");
@@ -187,6 +188,7 @@ void UpdateDialog::on_btnDownload_clicked()
 
 void UpdateDialog::downloadFinished(bool ok, UpdateInfo * updateInfo)
 {
+    if(!isVisible()) return;
     if(!ok) {
         QMessageBox::critical(this, tr("Query Upgrade Error"),
                               tr("Error while downloading application upgrade."),
