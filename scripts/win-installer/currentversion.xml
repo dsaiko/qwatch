@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<version>
+  <number>__VERSION__</number>
+  <date>__DATE__</date>
+  <file>http://qwatch.googlecode.com/files/__FILE__</file>
+  <size>__SIZE__</size>
+  <hash>__MD5__</hash>
+</version>
