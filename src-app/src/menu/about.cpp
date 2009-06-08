@@ -29,12 +29,14 @@
 #include "qwatch.h"
 #include <QDebug>
 #include <QDate>
+#include <QPixmap>
 
 AboutDialog::AboutDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::AboutDialogClass)
 {
     ui->setupUi(this);
 
+    ui->label->setPixmap(QPixmap(":/about-logo.jpg"));
     ui->textBrowser_2->viewport()->setAutoFillBackground(false);
 
     QDate versionDate = getVersionDate();
