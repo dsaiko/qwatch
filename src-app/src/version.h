@@ -38,6 +38,7 @@ QString getVersion();
 QDate getVersionDate();
 
 #endif
+
 // Rev 17,  Sun Apr 19 00:01:02 EST 2009
 // Rev 17,  Sun Apr 19 00:02:23 EST 2009
 // Rev 18,  Sun Apr 19 00:59:42 EST 2009
@@ -104,3 +105,4 @@ QDate getVersionDate();
 // Rev 49,  Mon Jun 8 12:00:04 EST 2009
 // Rev 49,  Mon Jun 8 12:00:04 EST 2009
 // Rev 49,  Mon Jun 8 12:00:04 EST 2009
+// Rev 51,  Mon Jun 8 12:50:25 EST 2009

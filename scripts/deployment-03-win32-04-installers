@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SCRIPTFOLDER=$(pwd)
+
+VERSION=$(./get-version)
+
+cd ../dist
+
+makensis qwatch.nsi
+makensis iswatch.nsi
+
+rm *.nsi *.TXT *.bmp *.ico
+
+

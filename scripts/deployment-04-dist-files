@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SCRIPTFOLDER=$(pwd)
+
+VERSION=$(./get-version)
+
+cd ../dist
+
+for f in *
+do
+ md5sum $f > $f.md5
+done
+
+

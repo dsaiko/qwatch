@@ -1,0 +1,11 @@
+#!/bin/bash
+
+./deployment-01-svn-trunk-source
+./deployment-02-linux-build
+./deployment-03-win32-01-prepare
+./deployment-03-win32-02-build
+./deployment-03-win32-03-postbuild
+./deployment-03-win32-04-installers
+./deployment-03-win32-05-pack
+./deployment-04-dist-files
+

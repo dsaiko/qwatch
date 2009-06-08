@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SCRIPTFOLDER=$(pwd)
+
+VERSION=$(./get-version)
+
+cd ../dist
+
+wineconsole win-compile.bat
+
+
