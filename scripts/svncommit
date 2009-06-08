@@ -12,15 +12,22 @@ status="$(svn status)"
 
 if [ "$status" != "" ]
 then
+    SOURCEMODIFIED=
     for file in $(svn status | awk '{print $2}')
     do
-      sourcefile=$(echo $file | egrep "\\.(h|cpp|pro|txt|ui|qm|ts)$")
+      sourcefile=$(echo $file | grep "src-")
       if [ "$sourcefile" != "" ]
       then
-        revision=$(svn info src-app/src/version.h | grep Revision | awk '{print $2}')
-        echo "// Rev $revision, " $(date) >> src-app/src/version.h
+        SOURCEMODIFIED="true"
       fi
     done
+    
+    if [ "$SOURCEMODIFIED" ] 
+    then
+        revision=$(svn info src-app/src/version.h | grep Revision | awk '{print $2}')
+        echo "// Rev $revision, " $(date) >> src-app/src/version.h
+    fi
+    
     for file in $(svn status | grep -v ! | awk '{print $2}')
     do
 	svn add $file
