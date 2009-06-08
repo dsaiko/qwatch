@@ -346,7 +346,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src-app/src/menu/update.cpp" line="70"/>
         <source>Query automatically new application version ?</source>
-        <translation>Zjistit automaticky novou verzi aplikace ?</translation>
+        <translation type="unfinished">Zjistit automaticky dostupnou verzi aplikace ?</translation>
     </message>
     <message>
         <location filename="../src-app/src/menu/update.cpp" line="103"/>
@@ -378,7 +378,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src-app/src/menu/update.cpp" line="155"/>
         <source>New version available.
 Download automatically new application version ?</source>
-        <translation>Je k dispozici nová verze programu.\nChcete jí automaticky stáhnout ?</translation>
+        <translation type="unfinished">Je k dispozici nová verze programu. Chcete ji automaticky stáhnout ?</translation>
     </message>
     <message>
         <location filename="../src-app/src/menu/update.cpp" line="192"/>
