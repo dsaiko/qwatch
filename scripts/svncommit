@@ -9,10 +9,18 @@ rm build/tests/*
 
 status="$(svn status)"
 
+
 if [ "$status" != "" ]
 then
-    revision=$(svn info src-app/src/version.h | grep Revision | awk '{print $2}')
-    echo "// Rev $revision, " $(date) >> src-app/src/version.h
+    for file in $(svn status | awk '{print $2}')
+    do
+      sourcefile=$(echo $file | egrep "\\.(h|cpp|pro|txt|ui|qm|ts)$")
+      if [ "$sourcefile" != "" ]
+      then
+        revision=$(svn info src-app/src/version.h | grep Revision | awk '{print $2}')
+        echo "// Rev $revision, " $(date) >> src-app/src/version.h
+      fi
+    done
     for file in $(svn status | grep -v ! | awk '{print $2}')
     do
 	svn add $file

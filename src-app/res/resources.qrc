@@ -15,7 +15,7 @@
         <file>images/flags/flag-cs.png</file>
         <file>images/flags/flag-de.png</file>
         <file>images/flags/flag-en.png</file>
-        <file alias="about.jpg" >images/about.jpg</file>
         <file alias="update.png" >images/update.png</file>
+        <file alias="about-logo.jpg" >images/about-logo.jpg</file>
     </qresource>
 </RCC>
