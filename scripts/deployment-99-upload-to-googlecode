@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ ! -d ../dist ]
+then
+ exit 1
+fi
+
+SCRIPTFOLDER=$(pwd)
+
+VERSION=$(./get-version)
+DATE=$(./get-date)
+
+cd ../dist
+
+. googlevars
+
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Installer,OpSys-Windows" -s "QWatch - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." qwatch-$VERSION-setup.exe
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Installer,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." iswatch-$VERSION-setup.exe
+
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Executable,OpSys-Windows" -s "QWatch - Win32 executable (for WinXP, Vista, Vista x64, Win 7, Win 7 x64)." qwatch-$VERSION.exe
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Executable,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Win32 executable (for WinXP, Vista, Vista x64, Win 7, Win 7 x64)." iswatch-$VERSION.exe
+
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Source,OpSys-Windows,OpSys-Linux" -s "QWatch source code and build scripts (QT 4.5 qmake)." qwatch-$VERSION.tar.gz
+
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "QWatch - current version information." qwatch-currentversion.xml
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "ISWatch (QWatch with Intershop logo) - current version informations." iswatch-currentversion.xml
+

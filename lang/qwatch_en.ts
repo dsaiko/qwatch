@@ -334,8 +334,8 @@ p, li { white-space: pre-wrap; }
     <name>UpdateDialog</name>
     <message>
         <location filename="../src-app/src/menu/update.cpp" line="69"/>
-        <location filename="../src-app/src/menu/update.cpp" line="154"/>
-        <location filename="../src-app/src/menu/update.cpp" line="203"/>
+        <location filename="../src-app/src/menu/update.cpp" line="155"/>
+        <location filename="../src-app/src/menu/update.cpp" line="205"/>
         <source>Application upgrade ...</source>
         <translation></translation>
     </message>
@@ -345,44 +345,44 @@ p, li { white-space: pre-wrap; }
         <translation>Query current application version now ?</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="103"/>
+        <location filename="../src-app/src/menu/update.cpp" line="104"/>
         <source>Query Upgrade Status</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="104"/>
+        <location filename="../src-app/src/menu/update.cpp" line="105"/>
         <source>New version is available! You can proceed by downloading the application installer.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="105"/>
+        <location filename="../src-app/src/menu/update.cpp" line="106"/>
         <source>Your application is up to date. Thank you for your interest.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="138"/>
-        <location filename="../src-app/src/menu/update.cpp" line="191"/>
+        <location filename="../src-app/src/menu/update.cpp" line="139"/>
+        <location filename="../src-app/src/menu/update.cpp" line="193"/>
         <source>Query Upgrade Error</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="139"/>
+        <location filename="../src-app/src/menu/update.cpp" line="140"/>
         <source>Error while quering application upgrade info.</source>
         <translation>Can not download current version info.</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="155"/>
+        <location filename="../src-app/src/menu/update.cpp" line="156"/>
         <source>New version available.
 Download automatically new application version ?</source>
-        <translation>New application version is available.\nStart downloading now ?</translation>
+        <translation type="unfinished">New application version is available. Start downloading now ?</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="192"/>
+        <location filename="../src-app/src/menu/update.cpp" line="194"/>
         <source>Error while downloading application upgrade.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/update.cpp" line="204"/>
+        <location filename="../src-app/src/menu/update.cpp" line="206"/>
         <source>New application version downloaded sucesfully.
 Start upgrade now ?</source>
         <translation></translation>

@@ -31,3 +31,4 @@ SIZE=$(ls -la $FILE | awk '{print $5}')
 
 cat $SCRIPTFOLDER/win-installer/currentversion.xml | sed "s/__VERSION__/$VERSION/" | sed "s/__DATE__/$DATE/" | sed "s/__FILE__/$FILE/" | sed "s/__MD5__/$MD5/" | sed "s/__SIZE__/$SIZE/" > iswatch-currentversion.xml
 
+rm *.md5
