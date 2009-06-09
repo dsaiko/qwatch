@@ -64,7 +64,7 @@ void QWatch::initPopupMenu()
         = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Hide"), true, SIGNAL(triggered()), this, SLOT(hideClock()));
 
     QAction *quitAction
-        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Quit"), true, SIGNAL(triggered()), qApp, SLOT(quit()));
+        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Quit"), true, SIGNAL(triggered()), this, SLOT(quit()));
     quitAction->setIcon(QIcon(":/exit.png"));
 
     QAction *secondClockAction

@@ -61,7 +61,7 @@ void QWatch::displayAbout() {
 void QWatch::displayAlarmClockDialog() {
     if( alarmClockDialog == NULL) {
        alarmClockDialog = new SetAlarmClockDialog(this, configuration);
-       connect(alarmClockDialog, SIGNAL(alarmTimeChanged(QTime)), this, SLOT(alarmTimeChanged(QTime)));
+       connect(alarmClockDialog, SIGNAL(alarmTimeChanged(QTime,bool, bool)), this, SLOT(alarmTimeChanged(QTime, bool, bool)));
     }
     alarmClockDialog->setDefaults();
     alarmClockDialog->show();
@@ -69,14 +69,13 @@ void QWatch::displayAlarmClockDialog() {
 
 
 void QWatch::enableAlarmClock() {
-    int value = 1;
     if(enableAlarmClockAction->isChecked() == false) {
-        value = 0;
-        alarmAnimation->stopAlarm();
+        configuration->setInt(CONFIG_ENABLEALARM,0);
+        alarmTimeChanged(QTime::currentTime(), true, false);
     } else {
-        alarmTimeChanged(QTime::currentTime(), true);
+        configuration->setInt(CONFIG_ENABLEALARM,1);
+        alarmTimeChanged(QTime::currentTime(), true, true);
     }
-    configuration->setInt(CONFIG_ENABLEALARM,value);
 }
 
 void QWatch::showClock(QSystemTrayIcon::ActivationReason reason)
@@ -120,11 +119,23 @@ void QWatch::setFramelessWindow() {
 }
 
 
-void QWatch::alarmTimeChanged(QTime t, bool readConfiguration)
+void QWatch::alarmTimeChanged(QTime t, bool readConfiguration, bool seton, bool startup)
 {
+    if(startup == false && alarmAnimation != NULL) {
+        int orgv=configuration->getInt(CONFIG_ENABLEALARM,0);
+        alarmAnimation->stopAlarm();
+        configuration->setInt(CONFIG_ENABLEALARM,orgv);
+    }
+
     if(alarmTimer != NULL) {
         alarmTimer->stop();
         delete alarmTimer;
+        alarmTimer = NULL;
+    }
+
+    if(seton) {
+        enableAlarmClockAction->setChecked(true);
+        configuration->setInt(CONFIG_ENABLEALARM,1);
     }
 
     if(readConfiguration) {
@@ -133,11 +144,15 @@ void QWatch::alarmTimeChanged(QTime t, bool readConfiguration)
         int h = l[0].toInt();
         int m = l[1].toInt();
         alarmTime.setHMS(h,m,0,0);
+        if(configuration->getInt(CONFIG_ENABLEALARM,0) == 0) {
+            return;
+        }
     } else {
         alarmTime = t;
         enableAlarmClockAction->setChecked(true);
         configuration->setInt(CONFIG_ENABLEALARM,1);
     }
+
 
     //timer for next alarm
     alarmTimer = new QTimer(this);

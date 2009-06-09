@@ -54,7 +54,7 @@ protected slots:
     void setAlarmClock();
 
 signals:
-    void alarmTimeChanged(QTime time);
+    void alarmTimeChanged(QTime time, bool reload, bool seton);
 
 
 private slots:

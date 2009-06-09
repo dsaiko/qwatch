@@ -104,12 +104,17 @@ public slots:
     //aarmclock menu slots
     void enableAlarmClock();
     void displayAlarmClockDialog();
-    void alarmTimeChanged(QTime t, bool readConfiguration = FALSE);
+    void alarmTimeChanged(QTime t, bool readConfiguration = false, bool seton=false, bool startup = false);
 
     void switchLanguage(QAction *action);
     void setClockSize(QAction *action);
 
+    void saveConfigGeometry();
+    void quit();
 protected:
+
+    void closeEvent(QCloseEvent *event);
+
     //paint watch
     void paintEvent(QPaintEvent *event);
 

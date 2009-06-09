@@ -86,10 +86,16 @@ QWatch::QWatch(QWidget *parent)
     setWindowTitle(STR_APPTITLE);
     QAction clockSize(this);
     clockSize.setData(configuration->getInt(CONFIG_CLOCKSIZE,2));
-    setClockSize(&clockSize);
 
-    QRect screen = QApplication::desktop()->geometry();
-    move(screen.center() - rect().center());
+    QString savedGeometry = configuration->getString(CONFIG_GEOMETRY, "");
+    if(savedGeometry.trimmed().length()==0) {
+       QRect screen = QApplication::desktop()->geometry();
+       move(screen.center() - rect().center());
+    } else {
+        restoreGeometry(QByteArray::fromBase64(savedGeometry.toAscii()));
+    }
+
+    setClockSize(&clockSize);
 
     updateSecondClockTimeDifference();
 
@@ -111,6 +117,17 @@ QWatch::QWatch(QWidget *parent)
     timerMonthlyUpgradeCheck->start(90*60*1000);
 #endif
 
+    //save geometry 5 mins after startup and then every hour // + at app close
+    QTimer *timerGeometry1 = new QTimer(this);
+    connect(timerGeometry1, SIGNAL(timeout()), this, SLOT(saveConfigGeometry()));
+    timerGeometry1->setSingleShot(true);
+    timerGeometry1->start(5*60*1000);
+    QTimer *timerGeometry2 = new QTimer(this);
+    connect(timerGeometry2, SIGNAL(timeout()), this, SLOT(saveConfigGeometry()));
+    timerGeometry2->start(60*60*1000);
+
+
+
     QTimer *timerFramelessMode = new QTimer(this);
     connect(timerFramelessMode, SIGNAL(timeout()), this, SLOT(checkFramelessMode()));
     timerFramelessMode->start(2000);
@@ -123,7 +140,7 @@ QWatch::QWatch(QWidget *parent)
     timerSecondClockSynchronisation->start(secondsLeftToNextHour+5);
 
     checkFramelessMode();
-    alarmTimeChanged(QTime::currentTime(), true);
+    alarmTimeChanged(QTime::currentTime(), true, false, true);
     initTray();
     updateTrayIcon();
     #ifdef Q_OS_WIN
@@ -260,3 +277,20 @@ void QWatch::paintEvent(QPaintEvent *)
          QWidget::changeEvent(event);
      }
  }
+
+ void QWatch::closeEvent(QCloseEvent *event)
+ {
+     saveConfigGeometry();
+     QWidget::closeEvent(event);
+ }
+
+  void QWatch::quit()
+ {
+     saveConfigGeometry();
+     qApp->quit();
+ }
+
+  void QWatch::saveConfigGeometry()
+  {
+     configuration->setString(CONFIG_GEOMETRY,saveGeometry().toBase64());
+  }

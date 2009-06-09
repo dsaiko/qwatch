@@ -46,6 +46,7 @@ class AlarmAnimation : public QObject {
 public:
     AlarmAnimation(QWatch *app);
     ~AlarmAnimation();
+    bool   isRunning;
 
 public slots:
     void repaint();
@@ -58,7 +59,6 @@ protected:
     QTimer *timerAnimation;
     QTimer *timerAlarm;
     int    alarmAnimationStep;
-    bool   isRunning;
     int    countAnimation;
     int    countAlarm1, countAlarm2;
 

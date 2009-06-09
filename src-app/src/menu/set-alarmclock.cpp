@@ -93,7 +93,7 @@ void SetAlarmClockDialog::setAlarmClock()
 
         config->setString(CONFIG_ALARMCLOCK,ui->comboBoxHours->currentText()+":"+ui->comboBoxMinutes->currentText());
         hide();
-        emit alarmTimeChanged(alarmTime);
+        emit alarmTimeChanged(alarmTime,false,true);
     } else {
         QTime c = QTime::currentTime();
 
@@ -111,10 +111,10 @@ void SetAlarmClockDialog::setAlarmClock()
 
         config->setString(CONFIG_ALARMCLOCK,QString::number(hour)+":"+QString::number(min));
 
-        alarmTime.setHMS(hour, min, 0, 0);
+        alarmTime.setHMS(hour, min, c.second(), 0);
 
         hide();
-        emit alarmTimeChanged(alarmTime);
+        emit alarmTimeChanged(alarmTime,false,true);
 
     }
 }
