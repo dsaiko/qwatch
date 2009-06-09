@@ -27,5 +27,5 @@ $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Source,OpSys-Windows,OpSys-Linux" -s "QWatch source code and build scripts (QT 4.5 qmake)." qwatch-$VERSION.tar.gz
 
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "QWatch - current version information." qwatch-currentversion.xml
-$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "ISWatch (QWatch with Intershop logo) - current version informations." iswatch-currentversion.xml
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "ISWatch (QWatch with Intershop logo) - current version information." iswatch-currentversion.xml
 
