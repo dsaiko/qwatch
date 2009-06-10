@@ -1,0 +1,21 @@
+*************************************
+*********** Popis změn  *************
+*************************************
+
+***** VERZE 1.0.61 (2009-06-09):
+
+První veřejná verze aplikace.
+
+Vlastnosti:
+
+- open source (otevřený kód)
+- moderní transparentní vzhled
+- okno bez rámu
+- zobrazení druhého času
+- jednoduchý kalendář
+- grafický a zvukový alarm
+- nastavení velikosti
+- multiplatformní (Linux a Windows (XP, Vista, Vista x64, 7, 7 x64))
+- podpora více jazyků (English, German (Deutsch), Czech (Česky))
+- automatická aktualizace aplikace
+- instalujte z http://qwatch.googlecode.com/files/qwatch-latest-setup.exe 

@@ -150,8 +150,8 @@ void QueryUpgrade::run()
 
 
     //get changelog
-    QString currentLanguageChangeLogUrl = downloadSite+QString(STR_APPTITLE).toLower()+"-changelog-"+lang+".txt";
-    QString globalChangeLogUrl = downloadSite+QString(STR_APPTITLE).toLower()+"-changelog.txt";
+    QString currentLanguageChangeLogUrl = downloadSite+"changelog-"+lang+".txt";
+    QString globalChangeLogUrl = downloadSite+"changelog.txt";
     connection = internet.openUrl(currentLanguageChangeLogUrl);
     if(!connection) {
         connection = internet.openUrl(globalChangeLogUrl);

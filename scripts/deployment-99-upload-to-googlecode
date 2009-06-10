@@ -25,7 +25,13 @@ $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Executable,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Win32 executable (for WinXP, Vista, Vista x64, Win 7, Win 7 x64)." iswatch-$VERSION.exe
 
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Source,OpSys-Windows,OpSys-Linux" -s "QWatch source code and build scripts (QT 4.5 qmake)." qwatch-$VERSION.tar.gz
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Source,OpSys-Windows,OpSys-Linux" -s "QWatch source code and build scripts (QT 4.5 qmake)." qwatch-latest.tar.gz
 
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "QWatch - current version information." qwatch-currentversion.xml
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "ISWatch (QWatch with Intershop logo) - current version information." iswatch-currentversion.xml
+
+
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "Changelog - EN." changelog.txt
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "Changelog - CS." changelog-cs.txt
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "Changelog - DE." changelog-de.txt
 

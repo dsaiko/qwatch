@@ -1,0 +1,21 @@
+************************************
+*********** Change Log *************
+************************************
+
+***** VERSION 1.0.61 (2009-06-09):
+
+Finished first public version of the application
+
+Features:
+
+- open source
+- modern transparent design
+- frameless window (composite manger detection for X11)
+- configurable second time
+- simple calendar
+- visual and audio alarm clock.
+- resizable
+- multi platform (runs on Linux and Windows (XP, Vista, Vista x64, 7, 7 x64))
+- multi language support (English, German (Deutsch), Czech (Česky))
+- auto update functionality
+- download from http://qwatch.googlecode.com/files/qwatch-latest-setup.exe 

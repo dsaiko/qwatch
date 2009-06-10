@@ -1,0 +1,17 @@
+************************************
+*********** Change Log *************
+************************************
+
+***** VERSION 1.0.61 (2009-06-09):
+
+Erste öffentliche Version
+
+- open source
+- modernes, transparentes Design
+- rahmenloses Fenster (falls unterstützt)
+- konfigurierbare sekundäre Zeit
+- einfacher Kalender
+- Größe veränderbar
+- grafischer Wecker
+- installieren Sie aus http://qwatch.googlecode.com/files/qwatch-latest-setup.exe 
+

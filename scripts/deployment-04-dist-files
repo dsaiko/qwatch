@@ -35,3 +35,8 @@ rm *.md5
 
 cp qwatch-$VERSION-setup.exe qwatch-latest-setup.exe
 cp iswatch-$VERSION-setup.exe iswatch-latest-setup.exe
+cp qwatch-$VERSION.tar.gz qwatch-latest.tar.gz
+
+cp ../CHANGELOG.TXT changelog.txt
+cp ../CHANGELOG-DE.TXT changelog-de.txt
+cp ../CHANGELOG-CS.TXT changelog-cs.txt
