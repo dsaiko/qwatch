@@ -2,7 +2,7 @@
 *********** Change Log *************
 ************************************
 
-***** VERSION 1.0.61 (2009-06-09):
+***** VERSION 1.0.64 (2009-06-10):
 
 Finished first public version of the application
 
