@@ -36,7 +36,6 @@ AboutDialog::AboutDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->label->setPixmap(QPixmap(":/about-logo.png"));
     ui->textBrowser_2->viewport()->setAutoFillBackground(false);
 
     QDate versionDate = getVersionDate();

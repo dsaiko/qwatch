@@ -170,7 +170,7 @@ void QueryUpgrade::run()
         return;
     }
     internet.closeUrl(connection);
-    updateInfo->changelog=QString(changelog.buffer());
+    updateInfo->changelog=QString::fromUtf8(changelog.buffer());
 
     //check if the remote version is new
     QStringList remoteVersion = updateInfo->availableVersion.split(".");
