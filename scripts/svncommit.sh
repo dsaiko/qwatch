@@ -2,10 +2,11 @@
 
 cd ..
 
+export EDITOR=/usr/bin/vim
+
 rm build/*
 rm build/app/*
 rm build/tests/*
-#rm -rf dist
 
 status="$(svn status)"
 

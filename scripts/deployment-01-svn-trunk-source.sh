@@ -16,7 +16,7 @@ find . | grep \\.user | xargs -l rm
 
 
 cd scripts
-VERSION=$(./get-version)
+VERSION=$(./get-version.sh)
 
 cd ..
 mkdir qwatch-$VERSION

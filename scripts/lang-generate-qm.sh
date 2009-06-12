@@ -2,6 +2,6 @@
 
 cd ../src-app
 
-lrelease-qt4 -verbose src-app.pro
+/cygdrive/c/Qt/dynamic/qt/bin/lrelease -verbose src-app.pro
 
 mv ../lang/*.qm ../src-app/res/translations/

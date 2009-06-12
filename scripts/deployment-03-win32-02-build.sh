@@ -7,7 +7,7 @@ fi
  
 SCRIPTFOLDER=$(pwd)
 
-VERSION=$(./get-version)
+VERSION=$(./get-version.sh)
 
 cd ../dist
 

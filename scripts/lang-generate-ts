@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd ../src-app
-
-lupdate-qt4 -verbose src-app.pro

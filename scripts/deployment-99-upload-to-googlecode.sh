@@ -7,8 +7,8 @@ fi
 
 SCRIPTFOLDER=$(pwd)
 
-VERSION=$(./get-version)
-DATE=$(./get-date)
+VERSION=$(./get-version.sh)
+DATE=$(./get-date.sh)
 
 cd ../dist
 
