@@ -14,5 +14,5 @@ cd ../dist
 mv iswatch.exe iswatch-$VERSION.exe
 mv qwatch.exe qwatch-$VERSION.exe
 
-upx -9 iswatch-$VERSION.exe
-upx -9 qwatch-$VERSION.exe
+upx --lzma -9 iswatch-$VERSION.exe
+upx --lzma -9 qwatch-$VERSION.exe
