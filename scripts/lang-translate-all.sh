@@ -2,4 +2,4 @@
 
 cd ../lang
 
-linguist-qt4 qwatch_*.ts
+/cygdrive/c/Qt/dynamic/qt/bin/linguist qwatch_en.ts qwatch_de.ts qwatch_cs.ts
