@@ -4,6 +4,12 @@ SCRIPTFOLDER=$(pwd)
 
 TMPFILE=/tmp/qwatch-$RANDOM-$RANDOM
 svn export http://qwatch.googlecode.com/svn/trunk/ $TMPFILE
+
+if [ ! -d $TMPFILE ]
+then
+ exit 1
+fi
+
 cd $TMPFILE
 find . | grep Makefile | xargs -l rm
 find . | grep \\.user | xargs -l rm
