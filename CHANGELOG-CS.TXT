@@ -1,6 +1,6 @@
 *********** Popis změn
 
-***** VERSION 1.0.75 (2009-06-13):
+***** VERSION 1.0.77 (2009-06-13):
 
 Malé úpravy aplikace:
 
