@@ -11,6 +11,6 @@ VERSION=$(./get-version)
 
 cd ../dist
 
-wineconsole win-compile.bat
+cmd /C win-compile.bat
 
 

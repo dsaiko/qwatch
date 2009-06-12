@@ -71,17 +71,17 @@
   LangString DESC_SecQWatch ${LANG_CZECH}   "Main app"
   LangString DESC_SecQWatch ${LANG_GERMAN}  "Main app"
 
-  LangString DESC_SecQWatchMenuGroup ${LANG_ENGLISH} "Creates application menu group."
+  LangString DESC_SecQWatchMenuGroup ${LANG_ENGLISH} "Create application menu group"
   LangString DESC_SecQWatchMenuGroup ${LANG_CZECH}   "Vytvoøí ikony aplikace v nabídce Start"
-  LangString DESC_SecQWatchMenuGroup ${LANG_GERMAN}  "Anwendungsmenü Gruppe erstellen."
+  LangString DESC_SecQWatchMenuGroup ${LANG_GERMAN}  "Startmenü-Gruppe erstellen"
   
   LangString DESC_SecQWatchDesktop ${LANG_ENGLISH} "Creates desktop icon."
   LangString DESC_SecQWatchDesktop ${LANG_CZECH}   "Vytvoøí ikonu na pracovní ploše."
-  LangString DESC_SecQWatchDesktop ${LANG_GERMAN}  "Ein Desktop-Symbol erstellen"
+  LangString DESC_SecQWatchDesktop ${LANG_GERMAN}  "Desktop-Symbol erstellen."
 
   LangString DESC_SecQWatchAutostart ${LANG_ENGLISH} "Autostart application at next login."
   LangString DESC_SecQWatchAutostart ${LANG_CZECH}   "Spustit aplikaci automaticky po dalším pøihlášení."
-  LangString DESC_SecQWatchAutostart ${LANG_GERMAN}  "Autostart-Anwendung für die nächsten Anmeldung"
+  LangString DESC_SecQWatchAutostart ${LANG_GERMAN}  "Anwendung bei nächster Anmeldung automatisch starten"
   
   LangString DESC_UNINSTALL ${LANG_ENGLISH} "uninstall"
   LangString DESC_UNINSTALL ${LANG_CZECH}   "odinstalování"
@@ -89,15 +89,15 @@
 
   LangString TITLE_MENU_GROUP ${LANG_ENGLISH} "Create menu group"
   LangString TITLE_MENU_GROUP ${LANG_CZECH}   "Vytvoøit ikony aplikace v nabídce Start"
-  LangString TITLE_MENU_GROUP ${LANG_GERMAN}  "Anwendungsmenü Gruppe erstellen"
+  LangString TITLE_MENU_GROUP ${LANG_GERMAN}  "Startmenü-Gruppe erstellen"
 
   LangString TITLE_DESKTOP_ICON ${LANG_ENGLISH} "Create desktop icon"
   LangString TITLE_DESKTOP_ICON ${LANG_CZECH}   "Vytvoøit ikonu na ploše"
-  LangString TITLE_DESKTOP_ICON ${LANG_GERMAN}  "Ein Desktop-Symbol erstellen"
+  LangString TITLE_DESKTOP_ICON ${LANG_GERMAN}  "Desktop-Symbol erstellen"
 
   LangString TITLE_AUTOSTART ${LANG_ENGLISH} "Automatically start up application"
   LangString TITLE_AUTOSTART ${LANG_CZECH}   "Automaticky spouštìt aplikaci"
-  LangString TITLE_AUTOSTART ${LANG_GERMAN}  "Autostart-Anwendung für die nächsten Anmeldung"
+  LangString TITLE_AUTOSTART ${LANG_GERMAN}  "Anwendung bei nächster Anmeldung automatisch starten"
   
 ;--------------------------------
 ;Installer Sections
