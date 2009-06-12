@@ -20,7 +20,7 @@
  * QWatch - analog watch with extended functionality
  * under GPL Licence
  *
- * Version file
+ * Version file.
  */
 
 #include "version.h"
