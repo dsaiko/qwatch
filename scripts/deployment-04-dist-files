@@ -40,3 +40,5 @@ cp qwatch-$VERSION.tar.gz qwatch-latest.tar.gz
 cp $SCRIPTFOLDER/../CHANGELOG.TXT changelog.txt
 cp $SCRIPTFOLDER/../CHANGELOG-DE.TXT changelog-de.txt
 cp $SCRIPTFOLDER/../CHANGELOG-CS.TXT changelog-cs.txt
+
+chmod 777 *

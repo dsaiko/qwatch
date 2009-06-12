@@ -20,5 +20,8 @@ cat $SCRIPTFOLDER/win-installer/installer.nsi | sed "s/__VERSION__/$VERSION/" | 
 
 cp $SCRIPTFOLDER/win-installer/res/* .
 
+chmod 777 *
+
+
 
 

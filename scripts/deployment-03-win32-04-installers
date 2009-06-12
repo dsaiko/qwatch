@@ -15,5 +15,3 @@ makensis qwatch.nsi
 makensis iswatch.nsi
 
 rm *.nsi *.TXT *.bmp *.ico
-
-
