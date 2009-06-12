@@ -141,7 +141,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src-app/ui/calendar.ui" line="22"/>
         <source>Close</source>
-        <translation></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -288,7 +288,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src-app/ui/second-timezone.ui" line="77"/>
         <source>Close</source>
-        <translation></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -331,7 +331,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src-app/ui/set-alarmclock.ui" line="94"/>
         <source>Close</source>
-        <translation></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
