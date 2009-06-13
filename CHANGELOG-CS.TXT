@@ -1,6 +1,11 @@
-*********** Popis změn
+***** VERZE 1.0.79 (2009-06-13):
 
-***** VERSION 1.0.77 (2009-06-13):
+Úpravy aplikace:
+
+ - opravena chyba pro automatickou aktualizaci
+ - přizpůsobeno kompilaci pro Windows x64
+
+***** VERZE 1.0.77 (2009-06-13):
 
 Malé úpravy aplikace:
 

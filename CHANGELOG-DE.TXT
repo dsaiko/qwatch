@@ -1,4 +1,9 @@
-*********** Change Log
+***** VERSION 1.0.79 (2009-06-13):
+
+Kleine Anpassungen der Anwendung:
+
+ - Kleine aktualisieren Korrektur
+ - Windows x64 Installation
 
 ***** VERSION 1.0.77 (2009-06-13):
 
