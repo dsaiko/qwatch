@@ -4,5 +4,5 @@
 
 TEMPLATE = subdirs
 CONFIG += ordered
-SUBDIRS = src-app src-tests
+SUBDIRS = src-app
 
