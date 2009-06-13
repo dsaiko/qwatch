@@ -1,16 +1,13 @@
 #!/bin/bash
 
-if [ ! -d ../dist ]
+if [ ! -d /tmp/dist ]
 then
  exit 1
 fi
-
 SCRIPTFOLDER=$(pwd)
-
 VERSION=$(./get-version.sh)
 DATE=$(./get-date.sh)
-
-cd ../dist
+cd /tmp/dist
 
 rm *.md5 *.xml
 

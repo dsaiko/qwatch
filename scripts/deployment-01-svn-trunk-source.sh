@@ -36,10 +36,9 @@ tar czf iswatch-$VERSION.tar.gz iswatch-$VERSION
 
 
 cd $SCRIPTFOLDER
-cd ..
-rm -rf dist
-mkdir dist
-cd dist
+rm -rf /tmp/dist
+mkdir /tmp/dist
+cd /tmp/dist
 
 cp $TMPFILE/qwatch-$VERSION.tar.gz .
 cp $TMPFILE/iswatch-$VERSION.tar.gz .

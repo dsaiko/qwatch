@@ -1,2 +1,2 @@
-call c:\qt\static-msvc\bin\qtenv.bat
-call C:\Windows\System32\cmd.exe /E:ON /V:ON /T:0E /C "SetEnv.Cmd /release /x86"
+call c:\qt\static-msvc-__ARCH__\bin\qtenv.bat
+C:\Windows\System32\cmd.exe /E:ON /V:ON /T:0E /C "msvc-qt.cmd /release /__ARCH__"

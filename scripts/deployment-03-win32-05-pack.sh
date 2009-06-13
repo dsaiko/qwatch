@@ -1,15 +1,12 @@
 #!/bin/bash
 
-if [ ! -d ../dist ]
+if [ ! -d /tmp/dist ]
 then
  exit 1
 fi
-
 SCRIPTFOLDER=$(pwd)
-
 VERSION=$(./get-version.sh)
-
-cd ../dist
+cd /tmp/dist
 
 mv iswatch.exe iswatch-$VERSION.exe
 mv qwatch.exe qwatch-$VERSION.exe
