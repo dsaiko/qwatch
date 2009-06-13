@@ -146,15 +146,16 @@ bool Inet::downloadFile(HINTERNET hSession, QIODevice *data, bool emitSignals)
         md5.MD5Final(digest, &md5ctx);
 
 
-        char asciihash[33];
-        int p = 0;
+        QString md5Hash="";
         for(int i=0; i<16; i++)
         {
-                ::sprintf(&asciihash[p],"%02x",digest[i]);
-                p += 2;
+            QString n = QString::number(digest[i],16);
+            if(n.length() < 2) {
+                n = "0" + n;
+            }
+            md5Hash += n;
         }
-        asciihash[32] = '\0';
-        downloadMD5 = QString(asciihash);
+        downloadMD5 = md5Hash;
 
         if(emitSignals) {
             emit downloadFinished(ok);

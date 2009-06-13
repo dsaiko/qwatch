@@ -298,9 +298,9 @@ void QWatch::performMonthlyUpgrade() {
         configuration->setString(CONFIG_LAST_UPDATE_CHECK,QString::number(now.toTime_t()));
         return;
     }
-    if(lastCheckTime.daysTo(now)<30); return;
+    if(lastCheckTime.daysTo(now)<30) return;
     if(!Inet::isInternetConnected()) {
-        qDebug() << "Automatic upgrade check - not connected to internet.";
+        qDebug() << "Automatic upgrade check - not connected to the internet.";
         return;
     }
 
