@@ -17,7 +17,7 @@ echo "UPLOADING iswatch-$VERSION-setup.exe ..."
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Installer,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Win32/x64 installer (includes native binaries for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does not require administrator rights." iswatch-$VERSION-setup.exe
 
 echo "UPLOADING qwatch-latest-setup.exe ..."
-$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Installer,OpSys-Windows" -s "QWatch - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." qwatch-latest-setup.exe
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Installer,OpSys-Windows" -s "QWatch - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does not require administrator rights." qwatch-latest-setup.exe
 echo "UPLOADING iswatch-latest-setup.exe ..."
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Installer,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does not require administrator rights." iswatch-latest-setup.exe
 
