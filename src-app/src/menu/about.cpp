@@ -45,7 +45,11 @@ AboutDialog::AboutDialog(QWidget *parent)
     if(date.contains(fullYear) == false) {
         date = date.replace(shortYear,fullYear);
     }
-    QString html = ui->textBrowser_2->toHtml().replace("VERSIONINFO",(getVersion()+" ("+date+")"));
+    QString versionInfo = (getVersion()+" ("+date+")");
+#ifdef WINDOWS64
+    versionInfo = versionInfo + " x64";
+#endif
+    QString html = ui->textBrowser_2->toHtml().replace("VERSIONINFO",versionInfo);
 #ifdef INTERSHOP
     html=html.replace("QWatch",QString("Intershop ")+STR_APPTITLE);
 #endif

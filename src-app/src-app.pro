@@ -12,6 +12,8 @@ INCLUDEPATH +=  . src/
 #ISBUILD DEFINES += INTERSHOP
 #ISBUILD TARGET = iswatch
 
+#64BUILD DEFINES += WINDOWS64
+
 OBJECTS_DIR = ../build/app
 MOC_DIR = ../build/app
 UI_DIR = ../build/app

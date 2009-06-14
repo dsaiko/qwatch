@@ -25,3 +25,13 @@ cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd iswatch-$VERSION/
 cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd qwatch-$VERSION/
 cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd iswatch-$VERSION-x64/
 cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd qwatch-$VERSION-x64/
+
+cd /tmp/dist/iswatch-$VERSION-x64/src-app
+mv src-app.pro src-app.pro.org
+cat src-app.pro.org | awk '{gsub("#64BUILD","");print}' > src-app.pro
+rm src-app.pro.org
+
+cd /tmp/dist/qwatch-$VERSION-x64/src-app
+mv src-app.pro src-app.pro.org
+cat src-app.pro.org | awk '{gsub("#64BUILD","");print}' > src-app.pro
+rm src-app.pro.org
