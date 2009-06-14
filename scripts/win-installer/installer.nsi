@@ -2,7 +2,7 @@
 ;Include Modern UI
 
   !include "MUI2.nsh"
-
+  !include "x64.nsh"
   
   !define	VERSION		"__VERSION__"
   !define	REGISTRYKEY	"Software\__APPFILE__"
@@ -111,7 +111,11 @@ Section "-QWatch" SecQWatch
   SetOutPath "$INSTDIR"
 
   ;ADD YOUR OWN FILES HERE...
-  File "${APPFILE}.exe"
+  ${If} ${RunningX64}
+    File "x64\${APPFILE}.exe"
+  ${Else}
+    File "x86\${APPFILE}.exe"
+  ${EndIf}
 
   ;Store installation folder
   WriteRegStr HKCU "${REGISTRYKEY}" "" $INSTDIR

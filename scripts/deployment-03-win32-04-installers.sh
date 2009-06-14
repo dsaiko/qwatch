@@ -11,4 +11,6 @@ cd /tmp/dist
 makensis qwatch.nsi
 makensis iswatch.nsi
 
-rm *.nsi *.TXT *.bmp *.ico
+rm -f *.nsi *.TXT *.bmp *.ico
+
+find . -type d | grep -v "\\.$" |  xargs -l rm -rf

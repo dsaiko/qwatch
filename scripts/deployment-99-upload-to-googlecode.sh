@@ -11,12 +11,10 @@ cd /tmp/dist
 
 . googlevars
 
-
 echo "UPLOADING qwatch-$VERSION-setup.exe ..."
-$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Installer,OpSys-Windows" -s "QWatch - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." qwatch-$VERSION-setup.exe
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Installer,OpSys-Windows" -s "QWatch - Win32/x64 installer (includes native binaries for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." qwatch-$VERSION-setup.exe
 echo "UPLOADING iswatch-$VERSION-setup.exe ..."
-$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Installer,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." iswatch-$VERSION-setup.exe
-
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Installer,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Win32/x64 installer (includes native binaries for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." iswatch-$VERSION-setup.exe
 
 echo "UPLOADING qwatch-latest-setup.exe ..."
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Installer,OpSys-Windows" -s "QWatch - Win32 installer (for WinXP, Vista, Vista x64, Win 7, Win 7 x64) - does NOT require administrator rights." qwatch-latest-setup.exe
@@ -45,4 +43,9 @@ echo "UPLOADING changelog-cs.txt ..."
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "Changelog - CS." changelog-cs.txt
 echo "UPLOADING changelog-de.txt ..."
 $SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Docs" -s "Changelog - DE." changelog-de.txt
+
+echo "UPLOADING qwatch-$VERSION-x64.exe ..."
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Featured,Type-Executable,OpSys-Windows" -s "QWatch - Windows x64 executable (for Vista x64, Win 7 x64)." qwatch-$VERSION-x64.exe
+echo "UPLOADING iswatch-$VERSION-x64.exe ..."
+$SCRIPTFOLDER/googlecode_upload.py -p qwatch -u $GOOGLECODE_USER -w $GOOGLECODE_PASSWORD -l "Type-Executable,OpSys-Windows" -s "ISWatch (QWatch with Intershop logo) - Windows x64 executable (for Vista x64, Win 7 x64)." iswatch-$VERSION-x64.exe
 

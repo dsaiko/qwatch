@@ -1,9 +1,10 @@
-***** VERSION 1.0.79 (2009-06-13):
+***** VERSION 1.0.83 (2009-06-14):
 
 Maintenance release:
 
  - fixed autoupdate bug
- - compiled for Windows x64
+ - changed compiler
+ - compiled for Windows x64 
 
 ***** VERSION 1.0.77 (2009-06-13):
 
