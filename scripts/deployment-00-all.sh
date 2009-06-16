@@ -9,3 +9,4 @@
 ./deployment-03-win32-04-installers.sh
 ./deployment-03-win32-05-pack.sh
 ./deployment-04-dist-files.sh
+./deployment-05-sign.sh 
