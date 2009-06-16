@@ -16,13 +16,11 @@ tar xzf qwatch-$VERSION.tar.gz
 cp -r iswatch-$VERSION iswatch-$VERSION-x64
 cp -r qwatch-$VERSION qwatch-$VERSION-x64
 
-cat $SCRIPTFOLDER/win-installer/win-compile.bat | sed "s/__ARCH__/x86/" > iswatch-$VERSION/win-compile.bat
-cat $SCRIPTFOLDER/win-installer/win-compile.bat | sed "s/__ARCH__/x86/" > qwatch-$VERSION/win-compile.bat
+cat $SCRIPTFOLDER/win-installer/win32-compile.bat > iswatch-$VERSION/win-compile.bat
+cat $SCRIPTFOLDER/win-installer/win32-compile.bat > qwatch-$VERSION/win-compile.bat
 cat $SCRIPTFOLDER/win-installer/win-compile.bat | sed "s/__ARCH__/x64/" > iswatch-$VERSION-x64/win-compile.bat
 cat $SCRIPTFOLDER/win-installer/win-compile.bat | sed "s/__ARCH__/x64/" > qwatch-$VERSION-x64/win-compile.bat
 
-cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd iswatch-$VERSION/
-cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd qwatch-$VERSION/
 cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd iswatch-$VERSION-x64/
 cp $SCRIPTFOLDER/win-installer/msvc-qt.cmd qwatch-$VERSION-x64/
 

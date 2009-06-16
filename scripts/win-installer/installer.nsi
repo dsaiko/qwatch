@@ -39,6 +39,11 @@
 
   !define MUI_ABORTWARNING
 
+  ;Remember the installer language
+  !define MUI_LANGDLL_REGISTRY_ROOT "HKCU" 
+  !define MUI_LANGDLL_REGISTRY_KEY "${REGISTRYKEY}" 
+  !define MUI_LANGDLL_REGISTRY_VALUENAME "InstallerLanguage"
+
 ;--------------------------------
 ;Pages
 
@@ -117,6 +122,10 @@ Section "-QWatch" SecQWatch
     File "x86\${APPFILE}.exe"
   ${EndIf}
 
+  File ${APPFILE}\uninstall.exe
+  ;Create uninstaller
+  ;WriteUninstaller "$INSTDIR\uninstall.exe"
+
   ;Store installation folder
   WriteRegStr HKCU "${REGISTRYKEY}" "" $INSTDIR
 
@@ -128,8 +137,6 @@ Section "-QWatch" SecQWatch
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" \
                  "QuietUninstallString" "$\"$INSTDIR\uninstall.exe$\" /S"		 
   
-  ;Create uninstaller
-  WriteUninstaller "$INSTDIR\uninstall.exe"
 
 SectionEnd
 
@@ -161,9 +168,11 @@ SectionEnd
 ;Installer Functions
 
 Function .onInit
-
   !insertmacro MUI_LANGDLL_DISPLAY
+FunctionEnd
 
+Function un.onInit
+  !insertmacro MUI_UNGETLANGUAGE
 FunctionEnd
 
 

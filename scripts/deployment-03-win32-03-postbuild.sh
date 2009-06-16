@@ -24,3 +24,14 @@ cp qwatch.exe x86/
 cp iswatch.exe x86/
 cp iswatch-x64.exe x64/iswatch.exe
 cp qwatch-x64.exe x64/qwatch.exe
+
+
+/cygdrive/C/Program\ Files/Microsoft\ SDKs/Windows/v6.1/bin/signtool.exe sign /a /d "QWatch" /du "http://qwatch.googlecode.com" /t "http://timestamp.comodoca.com/authenticode" x86/qwatch.exe
+/cygdrive/C/Program\ Files/Microsoft\ SDKs/Windows/v6.1/bin/signtool.exe sign /a /d "ISWatch" /du "http://qwatch.googlecode.com" /t "http://timestamp.comodoca.com/authenticode" x86/iswatch.exe
+/cygdrive/C/Program\ Files/Microsoft\ SDKs/Windows/v6.1/bin/signtool.exe sign /a /d "QWatch" /du "http://qwatch.googlecode.com" /t "http://timestamp.comodoca.com/authenticode" x64/qwatch.exe
+/cygdrive/C/Program\ Files/Microsoft\ SDKs/Windows/v6.1/bin/signtool.exe sign /a /d "ISWatch" /du "http://qwatch.googlecode.com" /t "http://timestamp.comodoca.com/authenticode" x64/iswatch.exe
+
+mkdir qwatch
+mkdir iswatch
+cp $SCRIPTFOLDER/win-installer/qwatch/uninstall.exe qwatch/
+cp $SCRIPTFOLDER/win-installer/iswatch/uninstall.exe iswatch/

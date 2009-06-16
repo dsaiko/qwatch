@@ -8,8 +8,8 @@ SCRIPTFOLDER=$(pwd)
 VERSION=$(./get-version.sh)
 cd /tmp/dist
 
-upx --lzma -9 iswatch.exe
-upx --lzma -9 qwatch.exe
+mpress iswatch.exe
+mpress qwatch.exe
 
 mpress -x iswatch-x64.exe
 mpress -x qwatch-x64.exe
