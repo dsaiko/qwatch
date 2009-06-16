@@ -1,12 +1,16 @@
-***** VERZE 1.0.83 (2009-06-14):
+***** VERZE 1.0.88 (2009-06-16):
+Úpravy distribuce aplikace:
 
+ - všechny .exe soubory jsou nyní digitálně podepsány
+ - opravena lokalizace odinstalování
+
+***** VERZE 1.0.83 (2009-06-14):
 Úpravy aplikace:
 
  - opravena chyba pro automatickou aktualizaci
  - přizpůsobeno kompilaci pro Windows x64
 
 ***** VERZE 1.0.77 (2009-06-13):
-
 Malé úpravy aplikace:
 
  - nová verze instalačního balíku NSIS
@@ -15,7 +19,6 @@ Malé úpravy aplikace:
  - změněno logo v dialogu "O programu"
 
 ***** VERZE 1.0.64 (2009-06-10):
-
 První veřejná verze aplikace.
 
 Vlastnosti:

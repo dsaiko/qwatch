@@ -1,4 +1,10 @@
-***** VERSION 1.0.79 (2009-06-14):
+***** VERSION 1.0.88 (2009-06-16):
+Installer Anpassungen:
+
+ - digitall Signatur für alle Dateien
+ - Deinstallationsprogramm localisation
+
+***** VERSION 1.0.83 (2009-06-14):
 
 Kleine Anpassungen der Anwendung:
 
