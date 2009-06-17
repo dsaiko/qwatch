@@ -30,10 +30,6 @@ cat $SCRIPTFOLDER/win-installer/currentversion.xml | sed "s/__VERSION__/$VERSION
 
 rm *.md5
 
-cp qwatch-$VERSION-setup.exe qwatch-latest-setup.exe
-cp iswatch-$VERSION-setup.exe iswatch-latest-setup.exe
-cp qwatch-$VERSION.tar.gz qwatch-latest.tar.gz
-
 cp $SCRIPTFOLDER/../CHANGELOG.TXT changelog.txt
 cp $SCRIPTFOLDER/../CHANGELOG-DE.TXT changelog-de.txt
 cp $SCRIPTFOLDER/../CHANGELOG-CS.TXT changelog-cs.txt
