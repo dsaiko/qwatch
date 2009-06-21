@@ -20,36 +20,39 @@
  * QWatch - analog watch with extended functionality
  * under GPL Licence
  *
- * About dialog
+ * Logo configuration
  */
 
-#ifndef ABOUTDLG_H
-#define ABOUTDLG_H
+#ifndef LOGODIALOG_H
+#define LOGODIALOG_H
 
 
 #include <QtGui/QDialog>
-#include "timezones.h"
 #include "config/configuration.h"
 
-#include "ui_about.h"
+#include "ui_logo.h"
+
+class QWatch;
 
 namespace Ui
 {
-    class AboutDialogClass;
+    class LogoDialogClass;
 }
 
-class AboutDialog : public QDialog
+class LogoDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    AboutDialog(QWidget *parent);
-    ~AboutDialog();
-    Ui::AboutDialogClass *ui;
-    void setVersion();
+    LogoDialog(QWatch *parent);
+    ~LogoDialog();
+    Ui::LogoDialogClass *ui;
+protected:
+    QWatch *qwatch;
 
 private slots:
-    void on_pushButton_3_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_clicked();
 };
 
-#endif // ABOUTDLG_H
+#endif // LOGODIALOG_H

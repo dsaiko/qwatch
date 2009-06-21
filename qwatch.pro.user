@@ -78,6 +78,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
    <value key="QtVersionId" type="int" >0</value>
    <value key="addQDumper" type="" ></value>
+   <value key="buildDirectory" type="QString" >P:\qt-projects\qwatch</value>
   </valuemap>
  </data>
  <data>
@@ -298,7 +299,7 @@
     <value type="QString" >CONFIG+=release</value>
    </valuelist>
    <value key="abstractProcess.command" type="QString" >C:/Qt/2009.02-win32-dynamic/qt/bin/qmake.exe</value>
-   <value key="abstractProcess.enabled" type="bool" >false</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
    <value key="abstractProcess.workingDirectory" type="QString" >P:/qt-projects/qwatch</value>
    <value key="buildConfiguration" type="int" >0</value>
   </valuemap>
@@ -376,7 +377,7 @@
     <value type="QString" >LOGONSERVER=\\JDSAIKO</value>
     <value type="QString" >NUMBER_OF_PROCESSORS=2</value>
     <value type="QString" >OS=Windows_NT</value>
-    <value type="QString" >PATH=C:\Qt\2009.02-win32-static\mingw\bin;C:\Qt\2009.02-win32-static\qt\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\TortoiseSVN\bin;C:\Program Files (x86)\QuickTime\QTSystem\;c:\Program Files (x86)\NSIS;C:\sysinternals;C:\Program Files (x86)\OpenVPN\bin</value>
+    <value type="QString" >PATH=C:\Qt\2009.02-win32-dynamic\mingw\bin;C:\Qt\2009.02-win32-dynamic\qt\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\TortoiseSVN\bin;C:\Program Files (x86)\QuickTime\QTSystem\;c:\Program Files (x86)\NSIS;C:\sysinternals;C:\Program Files (x86)\OpenVPN\bin</value>
     <value type="QString" >PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC</value>
     <value type="QString" >PROCESSOR_ARCHITECTURE=x86</value>
     <value type="QString" >PROCESSOR_ARCHITEW6432=AMD64</value>
@@ -389,7 +390,7 @@
     <value type="QString" >PROGRAMW6432=C:\Program Files</value>
     <value type="QString" >PSMODULEPATH=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\</value>
     <value type="QString" >PUBLIC=C:\Users\Public</value>
-    <value type="QString" >QTDIR=C:/Qt/2009.02-win32-static/qt</value>
+    <value type="QString" >QTDIR=C:/Qt/2009.02-win32-dynamic/qt</value>
     <value type="QString" >QTJAVA=C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip</value>
     <value type="QString" >SESSIONNAME=Console</value>
     <value type="QString" >SYSTEMDRIVE=C:</value>
@@ -405,7 +406,7 @@
     <value type="QString" >clean</value>
     <value type="QString" >-w</value>
    </valuelist>
-   <value key="abstractProcess.command" type="QString" >C:/Qt/2009.02-win32-static/mingw/bin/mingw32-make.exe</value>
+   <value key="abstractProcess.command" type="QString" >C:/Qt/2009.02-win32-dynamic/mingw/bin/mingw32-make.exe</value>
    <value key="abstractProcess.enabled" type="bool" >true</value>
    <value key="abstractProcess.workingDirectory" type="QString" >P:/qt-projects/qwatch</value>
   </valuemap>

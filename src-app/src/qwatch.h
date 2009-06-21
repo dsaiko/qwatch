@@ -44,6 +44,7 @@
 #include "menu/set-alarmclock.h"
 #include "menu/calendar.h"
 #include "menu/about.h"
+#include "menu/logo.h"
 #ifdef Q_OS_WIN
 #include "menu/update.h"
 #endif
@@ -63,6 +64,7 @@ class QWatch : public QWidget
 
 public:
     QWatch(QWidget *parent = 0);
+    Configuration *configuration;
 
 public slots:
     //show/hide clock
@@ -89,6 +91,7 @@ public slots:
 
     //display about dialog
     void displayAbout();
+    void displayLogoDialog();
 
 
     //timer for updating second clock timezone difference
@@ -152,12 +155,12 @@ protected:
     AlarmAnimation *alarmAnimation;
 
     ClockPainter *clockPainter;
-    Configuration *configuration;
 
     SecontTimeZoneDialog    *timeZoneDialog;
     SetAlarmClockDialog     *alarmClockDialog;
     AboutDialog             *aboutDialog;
     CalendarDialog          *calendarDialog;
+    LogoDialog              *logoDialog;
     #ifdef Q_OS_WIN
     UpdateDialog            *updateDialog;
     #endif

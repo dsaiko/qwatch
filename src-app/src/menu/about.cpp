@@ -37,7 +37,12 @@ AboutDialog::AboutDialog(QWidget *parent)
     ui->setupUi(this);
 
     ui->textBrowser_2->viewport()->setAutoFillBackground(false);
+    setVersion();
+}
 
+
+void AboutDialog::setVersion()
+{
     QDate versionDate = getVersionDate();
     QString date=versionDate.toString(Qt::DefaultLocaleShortDate);
     QString fullYear=versionDate.toString("yyyy");
@@ -56,7 +61,6 @@ AboutDialog::AboutDialog(QWidget *parent)
 
     ui->textBrowser_2->setHtml(html);
 }
-
 
 AboutDialog::~AboutDialog()
 {

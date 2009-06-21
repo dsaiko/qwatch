@@ -29,7 +29,7 @@
 #include "graphics/painter.h"
 #include "graphics/constants-graphics.h"
 #include "config/constants-config.h"
-
+#include <cmath>
 
 void drawPath(QPainter *painter, QFont font, QRect rect, int y, QString str, bool center=true)
 {
@@ -247,6 +247,45 @@ void ClockPainter::paintStripes(QPainter *painter) {
     }
 }
 
+
+qreal drawLogo(QPainter *painter, QString &str, const QFont &font, qreal y, bool paint)
+{
+    painter->setFont(font);
+    QFontMetrics fm = painter->fontMetrics();
+    qreal totalAlfa = 0;
+    for(int i=0; i<str.length(); i++) {
+        QCharRef c = str[i];
+
+        qreal w;
+        qreal w2;
+
+        w = fm.width(c);
+        if(c != ' ')  {
+            w=w*1.1; //space more
+        } else {
+            w=w*1.2; //space more
+        }
+
+        w2=w/2;
+
+        qreal alfa = std::acos((double)1.0-w2*w2/(2.0*y*y));
+        alfa = alfa * 180 / PI;
+        if(paint) painter->rotate(-alfa);
+        totalAlfa += alfa;
+
+        if(paint && c != ' ') {
+            QPainterPath path2;
+            path2.addText(-w/2, y, font, QString(c));
+            painter->drawPath(path2);
+        }
+        if(i<str.length()-1) {
+            if(paint) painter->rotate(-alfa);
+            totalAlfa += alfa;
+        }
+    }
+    return totalAlfa;
+}
+
 void ClockPainter::paintLogo(QPainter *painter) {
 
     painter->save();
@@ -266,35 +305,19 @@ void ClockPainter::paintLogo(QPainter *painter) {
     painter->setBrush(c1);
 
 
-#ifdef INTERSHOP
-    static QString str2("INTERSHOP");
-    painter->rotate(40);
-    int offset = 70;
-#else
-    static QString str2("QWATCH");
-    painter->rotate(24);
-    int offset=65;
-#endif
+    QString logo = app->configuration->getString(CONFIG_LOGO,LOGO_DEFAULT).trimmed();
 
-    QFontMetrics fm = painter->fontMetrics();
-    for(int i=0; i<str2.length(); i++) {
-        QCharRef c = str2[i];
-        int w = fm.width(c);
-
-        QPainterPath path2;
-        path2.addText(-w/2, offset, font3, QString(c));
-        painter->drawPath(path2);
-#ifdef INTERSHOP
-        if(i==0) {
-            painter->rotate(-w*2);
-        } else {
-            painter->rotate(-w*1);
+    int y=65;
+    if(logo.length() > 0) {        
+        qreal alfa = drawLogo(painter, logo, font3, y, false);
+        if(alfa<40) {
+            y-=6;
+            alfa = drawLogo(painter, logo, font3, y, false);
         }
-#else
-        painter->rotate(-w*1);
-#endif
+        painter->rotate(alfa/2);
+        drawLogo(painter, logo, font3, y, true);
+        painter->restore();
     }
-    painter->restore();
 }
 
 void ClockPainter::paintDigits(QPainter *painter, bool trayiconmode) {

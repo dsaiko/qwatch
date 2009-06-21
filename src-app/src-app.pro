@@ -30,6 +30,7 @@ HEADERS +=      src/qwatch.h \
                 src/menu/calendar.h \
                 src/menu/about.h \
                 src/timezones.h \
+                src/menu/logo.h \
                 src/version.h \
                 src/graphics/constants-graphics.h \
                 src/config/constants-config.h \
@@ -43,6 +44,7 @@ SOURCES +=      src/main.cpp \
                 src/graphics/painter-alarmclock.cpp \
                 src/graphics/painter-trayicon.cpp \
                 src/qwatch.cpp \
+                src/menu/logo.cpp \
                 src/timezones.cpp \
                 src/systeminfo.cpp \
                 src/config/configuration.cpp \
@@ -59,6 +61,7 @@ SOURCES +=      src/main.cpp \
 FORMS +=        ui/second-timezone.ui \
                 ui/set-alarmclock.ui \
                 ui/calendar.ui \
+                ui/logo.ui \
                 ui/about.ui
 
 RESOURCES +=    res/resources.qrc

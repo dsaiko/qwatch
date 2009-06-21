@@ -75,6 +75,10 @@ void QWatch::initPopupMenu()
         = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Display calendar"), true, SIGNAL(triggered()), this, SLOT(displayCalendar()));
     calendarAction->setIcon(QIcon(":/calendar.png"));
 
+    QAction *logoAction
+        = createMenuItem(translateMap, this, QT_TRANSLATE_NOOP("QWatchMenu","Customize logo"), true, SIGNAL(triggered()), this, SLOT(displayLogoDialog()));
+    logoAction->setIcon(QIcon(":/alfa.png"));
+
     aboutAction
         = createMenuItem(translateMap, this, QString(QT_TRANSLATE_NOOP("QWatchMenu","About")), true, SIGNAL(triggered()), this, SLOT(displayAbout()));
     aboutAction->setIcon(QIcon(":/about.png"));
@@ -227,6 +231,7 @@ void QWatch::initPopupMenu()
     popupMenu->addAction(framelessWindowAction);
     popupMenu->addMenu(clockSizeMenu);
     popupMenu->addMenu(languageMenu);
+    popupMenu->addAction(logoAction);
     popupMenu->addSeparator();
     popupMenu->addAction(secondClockAction);
     popupMenu->addAction(calendarAction);

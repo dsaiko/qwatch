@@ -25,7 +25,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;(c) 2009 Dusan Saiko&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;mailto:dusan.saiko@gmail.com&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;dusan.saiko@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -145,6 +145,29 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>LogoDialogClass</name>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="14"/>
+        <source>Customize logo</source>
+        <translation>Nastavení loga</translation>
+    </message>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="22"/>
+        <source>Logo text:</source>
+        <translation>Zobrazovaný text:</translation>
+    </message>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="44"/>
+        <source>Set</source>
+        <translation>Nastavit</translation>
+    </message>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="51"/>
+        <source>Close</source>
+        <translation>Zavřít</translation>
+    </message>
+</context>
+<context>
     <name>QWatchMenu</name>
     <message>
         <location filename="../src-app/src/menu/menu.cpp" line="62"/>
@@ -173,92 +196,97 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src-app/src/menu/menu.cpp" line="79"/>
+        <source>Customize logo</source>
+        <translation>Nastavení loga</translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/menu.cpp" line="83"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="85"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="89"/>
         <source>Upgrade application ...</source>
         <translation>Aktualizovat aplikaci ...</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="89"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="93"/>
         <source>Allow monthly upgrade query</source>
         <translation>Povolit měsíční automatickou aktualizaci</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="94"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="98"/>
         <source>Set alarm clock</source>
         <translation>Nastavit alarm</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="98"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="102"/>
         <source>Stop alarm!</source>
         <translation>Vypnout alarm</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="103"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="107"/>
         <source>Enable alarm clock</source>
         <translation>Zapnout alarm</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="107"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="111"/>
         <source>Allow frameless window</source>
         <translation>Povolit okno bez rámu</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="114"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="118"/>
         <source>Fully opaque</source>
         <translation>Žádná průhlednost</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="129"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="133"/>
         <source>Small</source>
         <translation>Malá</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="131"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="135"/>
         <source>Normal</source>
         <translation>Normální</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="133"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="137"/>
         <source>Large</source>
         <translation>Velká</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="135"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="139"/>
         <source>Even bigger</source>
         <translation>Ještě větší</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="137"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="141"/>
         <source>Extra large</source>
         <translation>Extra velká</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="139"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="143"/>
         <source>Screen size</source>
         <translation>Přes celou obrazovku</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="143"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="147"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="158"/>
-        <location filename="../src-app/src/menu/menu.cpp" line="169"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="162"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="173"/>
         <source>English</source>
         <translation>Česky</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="205"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="209"/>
         <source>Transparency</source>
         <translation>Průhlednost</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="214"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="218"/>
         <source>Clock size</source>
         <translation>Velikost hodin</translation>
     </message>

@@ -68,6 +68,16 @@ void QWatch::displayAlarmClockDialog() {
 }
 
 
+
+void QWatch::displayLogoDialog() {
+    if(  logoDialog == NULL) {
+       logoDialog = new LogoDialog(this);
+    }
+    logoDialog->show();
+}
+
+
+
 void QWatch::enableAlarmClock() {
     if(enableAlarmClockAction->isChecked() == false) {
         configuration->setInt(CONFIG_ENABLEALARM,0);
@@ -230,16 +240,13 @@ void QWatch::retranslateUi()
     if(calendarDialog != NULL) { calendarDialog->ui->retranslateUi(calendarDialog); }
     if(timeZoneDialog != NULL) { timeZoneDialog->ui->retranslateUi(timeZoneDialog); }
     if(alarmClockDialog != NULL) { alarmClockDialog->ui->retranslateUi(alarmClockDialog); }
+    if(logoDialog != NULL) { logoDialog->ui->retranslateUi(logoDialog); }
 #ifdef Q_OS_WIN
     if(updateDialog!=NULL) { updateDialog->ui->retranslateUi(updateDialog); }
 #endif
     if(aboutDialog != NULL)    {
         aboutDialog->ui->retranslateUi(aboutDialog);
-        QString html = aboutDialog->ui->textBrowser_2->toHtml().replace("VERSIONINFO",getVersion());
-        #ifdef INTERSHOP
-            html=html.replace("QWatch",QString("Intershop ")+STR_APPTITLE);
-        #endif
-        aboutDialog->ui->textBrowser_2->setHtml(html);
+        aboutDialog->setVersion();
     }
     if(calendarDialog != NULL) { calendarDialog->ui->retranslateUi(calendarDialog); }
 

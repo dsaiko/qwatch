@@ -28,7 +28,14 @@
 
 #include <QPoint>
 
-#define PI 3.141592654
+#ifdef INTERSHOP
+#define LOGO_DEFAULT "INTERSHOP"
+#else
+#define LOGO_DEFAULT "QWATCH"
+#endif
+
+#define PI 3.141592653589793
+
 #define SHADOWFFSET 5.0
 
 #define TRAYICON_PIXMAP_SIZE 48

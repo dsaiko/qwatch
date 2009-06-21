@@ -145,6 +145,29 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>LogoDialogClass</name>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="14"/>
+        <source>Customize logo</source>
+        <translation>Logo einstellen</translation>
+    </message>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="22"/>
+        <source>Logo text:</source>
+        <translation>Folgende Zeichenkette darstellen:</translation>
+    </message>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="44"/>
+        <source>Set</source>
+        <translation>Übernehmen</translation>
+    </message>
+    <message>
+        <location filename="../src-app/ui/logo.ui" line="51"/>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+</context>
+<context>
     <name>QWatchMenu</name>
     <message>
         <location filename="../src-app/src/menu/menu.cpp" line="62"/>
@@ -173,92 +196,97 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src-app/src/menu/menu.cpp" line="79"/>
+        <source>Customize logo</source>
+        <translation>Logo einstellen</translation>
+    </message>
+    <message>
+        <location filename="../src-app/src/menu/menu.cpp" line="83"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="85"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="89"/>
         <source>Upgrade application ...</source>
         <translation>Anwendung aktualisieren...</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="89"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="93"/>
         <source>Allow monthly upgrade query</source>
         <translation>Monatliche Update-Anfrage zulassen</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="94"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="98"/>
         <source>Set alarm clock</source>
         <translation>Wecker stellen</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="98"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="102"/>
         <source>Stop alarm!</source>
         <translation>Wecker ausschalten</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="103"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="107"/>
         <source>Enable alarm clock</source>
         <translation>Wecker einschalten</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="107"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="111"/>
         <source>Allow frameless window</source>
         <translation>Rahmenloses Fenster zulassen</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="114"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="118"/>
         <source>Fully opaque</source>
         <translation>Durchsichtig</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="129"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="133"/>
         <source>Small</source>
         <translation>Klein</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="131"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="135"/>
         <source>Normal</source>
         <translation>Normal</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="133"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="137"/>
         <source>Large</source>
         <translation>Groß</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="135"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="139"/>
         <source>Even bigger</source>
         <translation>Noch größer</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="137"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="141"/>
         <source>Extra large</source>
         <translation>Sehr groß</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="139"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="143"/>
         <source>Screen size</source>
         <translation>Bildschirmgröße</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="143"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="147"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="158"/>
-        <location filename="../src-app/src/menu/menu.cpp" line="169"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="162"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="173"/>
         <source>English</source>
         <translation>Deutsch</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="205"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="209"/>
         <source>Transparency</source>
         <translation>Transparenz</translation>
     </message>
     <message>
-        <location filename="../src-app/src/menu/menu.cpp" line="214"/>
+        <location filename="../src-app/src/menu/menu.cpp" line="218"/>
         <source>Clock size</source>
         <translation>Uhrengröße</translation>
     </message>

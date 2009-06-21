@@ -93,3 +93,5 @@ QDate getVersionDate();
 // Rev 77,  Sat Jun 13 17:10:30 AUSEST 2009
 // Rev 82,  Sun Jun 14 16:43:52 AUSEST 2009
 // Rev 83,  Tue Jun 16 14:06:47 AUSEST 2009
+// Rev 88,  Sun Jun 21 15:02:55 AUSEST 2009
+// Rev 88,  Sun Jun 21 15:16:59 AUSEST 2009

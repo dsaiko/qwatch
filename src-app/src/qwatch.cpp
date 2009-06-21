@@ -56,6 +56,7 @@ QWatch::QWatch(QWidget *parent)
     timeZoneDialog = NULL;
     calendarDialog = NULL;
     alarmClockDialog = NULL;
+    logoDialog = NULL;
     alarmTimer = NULL;
     aboutDialog = NULL;
 #ifdef Q_OS_WIN
@@ -255,17 +256,15 @@ void QWatch::paintEvent(QPaintEvent *)
 {
     QTime time = QTime::currentTime();
 
-    QPainter *painter = new QPainter(this);
+    QPainter painter(this);
 
-    clockPainter->paintClock(this, painter, time, this->clockSize, secondClockTimeDifferenceInSeconds);
+    clockPainter->paintClock(this, &painter, time, this->clockSize, secondClockTimeDifferenceInSeconds);
 
     QString tooltip = QDateTime::currentDateTime().toString(Qt::DefaultLocaleLongDate);
     trayIcon->setToolTip(tooltip);
     setToolTip(tooltip);
     trayIcon->show();
     setWindowIconText(tooltip);
-
-    delete painter;
 }
 
 

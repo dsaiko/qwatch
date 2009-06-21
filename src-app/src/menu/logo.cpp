@@ -20,36 +20,39 @@
  * QWatch - analog watch with extended functionality
  * under GPL Licence
  *
- * About dialog
+ * Logo configuration
  */
 
-#ifndef ABOUTDLG_H
-#define ABOUTDLG_H
+#include "menu/logo.h"
+#include "config/constants-config.h"
+#include "graphics/constants-graphics.h"
+#include "qwatch.h"
+#include <QMessageBox>
+#include <QLocale>
 
 
-#include <QtGui/QDialog>
-#include "timezones.h"
-#include "config/configuration.h"
-
-#include "ui_about.h"
-
-namespace Ui
+LogoDialog::LogoDialog(QWatch *parent)
+    : QDialog(parent), ui(new Ui::LogoDialogClass)
 {
-    class AboutDialogClass;
+    ui->setupUi(this);
+    this->qwatch = parent;
+    ui->lineEdit->setText(qwatch->configuration->getString(CONFIG_LOGO,LOGO_DEFAULT));
 }
 
-class AboutDialog : public QDialog
+
+LogoDialog::~LogoDialog()
 {
-    Q_OBJECT
+    delete ui;
+}
 
-public:
-    AboutDialog(QWidget *parent);
-    ~AboutDialog();
-    Ui::AboutDialogClass *ui;
-    void setVersion();
+void LogoDialog::on_pushButton_clicked()
+{
+    hide();
+    qwatch->configuration->setString(CONFIG_LOGO,ui->lineEdit->text());
+}
 
-private slots:
-    void on_pushButton_3_clicked();
-};
-
-#endif // ABOUTDLG_H
+void LogoDialog::on_pushButton_2_clicked()
+{
+    hide();
+    ui->lineEdit->setText(qwatch->configuration->getString(CONFIG_LOGO,LOGO_DEFAULT));
+}

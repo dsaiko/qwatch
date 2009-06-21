@@ -48,6 +48,7 @@
 #define CONFIG_CLOCKSIZE        "ClockSize"
 #define CONFIG_LANGUAGE         "Language"
 #define CONFIG_GEOMETRY         "Geometry"
+#define CONFIG_LOGO             "Logo"
 #ifdef Q_OS_WIN
     #define CONFIG_AUTOUPDATE       "AutoUpdateEnabled"
     #define CONFIG_LAST_UPDATE_CHECK "LastUpgradeCheck"
