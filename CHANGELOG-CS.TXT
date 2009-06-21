@@ -1,3 +1,8 @@
+***** VERZE 1.0.91 (2009-06-21):
+Nové vlastnosti:
+
+ - přidána možnost nastavit zobrazovaný text (logo)
+
 ***** VERZE 1.0.88 (2009-06-16):
 Úpravy distribuce aplikace:
 
