@@ -86,5 +86,5 @@ win32 {
 
 
 unix {
-    QMAKE_LIBS +=   -lasound
+    QMAKE_LIBS += -lasound -lX11
 }

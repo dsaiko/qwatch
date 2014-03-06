@@ -30,8 +30,8 @@
 #include <QDate>
 
 #define MAJORVERSION    "1.0."
-#define MINORVERSION    "$Rev$"
-#define VERSIONDATE     "$Date$"
+#define MINORVERSION    "99"
+#define VERSIONDATE     "2014-03-07"
 
 QString getVersion();
 QDate getVersionDate();
