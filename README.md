@@ -20,3 +20,5 @@ QWatch - QT4 alarm watch widget
  (c) 2009 Dusan Saiko
  
  - note as of March 2014 - after migration to GitHub, auto-update for windows probably not working any more
+
+![](http://www.saiko.cz/qwatch-screenshot-Ubuntu.jpg)
